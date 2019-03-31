@@ -1,0 +1,68 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+
+
+void setup()
+{
+  size(400,400);
+  background(125);
+  fill(255);
+  noLoop();
+  PFont fontA = loadFont("courier");
+  textFont(fontA, 14);  
+
+}
+
+
+					
+	// the starting size for the sun
+var sunSize = 30; 
+
+
+void draw(){  
+
+		do {
+		
+			noStroke();
+
+
+	// the beautiful blue sky
+	background(82, 222, 240);
+
+	sunSize++;
+
+	// The sun, a little circle on the horizon
+	fill(255, 204, 0);
+	ellipse(200, 298, sunSize, sunSize);
+
+
+	// The land, blocking half of the sun
+	fill(76, 168, 67);
+	rect(0, 300, 400, 100);			
+
+
+}		
+
+while (sunSize <= 300);
+		
+
+}
+
+
+
+
+
+
+								
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

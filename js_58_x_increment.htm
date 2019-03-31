@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Increment Operator</title>
+    <script>
+      function fnIncrement(x) {
+        x++;
+        document.getElementById('num1').value = x;
+      }
+      function fnDecrement(x) {
+        x--;
+        document.getElementById('num1').value = x;
+      }
+    </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Increment x++ and Decrement x-- operators</h2>
+  <form>
+    <input id="num1" type="number" name="a" value="6" />
+    <button type="button" onclick="fnIncrement(parseInt(a.value))">Click here to increment x++ the value by one</button>
+    <button type="button" onclick="fnDecrement(parseInt(a.value))">Click here to decrement x-- the value by one</button>
+   </form>
+   
+  <h2>What is the difference between x++ and ++x?</h2>
+  <form>
+    <p>If x = 7 then y = x++ means y = 7 then x increments to 8</p>
+    <p>If x = 7 then y = ++x means x increments to 8, then y = 8</p>
+   </form>
+</body>
+</html>

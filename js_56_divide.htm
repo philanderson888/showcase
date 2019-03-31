@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Lab - Division</title>
+    <script>
+        function functionDivide(x, y) {
+            document.getElementById('divideMe').innerText = x + " / " + y + " = " + (x / y);
+        }
+    </script>
+</head>
+<body>
+    <h1>Javascript Labs</h1>
+    <h2>Division</h2>
+    <form>
+        <input type="number" name="a" value="500" />
+        &nbsp;&nbsp;/&nbsp;&nbsp;
+        <input type="number" name="b" value="50" />
+        <button type="button" onclick="functionDivide(parseInt(a.value),parseInt(b.value))">Click here to divide two numbers</button>
+    </form>
+    <p id="divideMe"></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - If .. Else Statement</title>
+    <script>
+      function fnCompareValue(x) {
+        var output = "";
+        if (x < 0) {
+          output = "Your number is negative";
+        }
+        else if (x < 10) {
+          output = "Your number is between 0 and 10"
+        }
+        else {
+          output = "Your number is 10 or higher";
+        }
+        document.getElementById('para1').innerHTML = output;
+      }
+    </script>
+</head>
+<body>
+  <form>
+    <input type="number" name="a" value="55" />
+    <button type="button" onclick="fnCompareValue(parseInt(a.value))">Click here to find out the range your number is in</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

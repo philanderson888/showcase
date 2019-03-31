@@ -1,0 +1,116 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+
+   /* @pjs preload="images/Hopper-Cool.png"; */
+	 /* @pjs preload="images/Star.png"; */
+	
+}
+	
+
+var hopper = loadImage("images/Hopper-Cool.png");
+var star = loadImage("images/Star.png");
+   
+
+
+var books = [
+    {
+    title: "The Giver",
+    stars: 4   
+    },
+    {
+    title: "The Taker",
+    stars: 3   
+    },
+    {
+    title: "The Receiver",
+    stars: 2   
+    },
+    {
+    title: "The Bachelor",
+    stars: 4   
+    }
+];
+
+
+
+			
+				
+draw = function(){				
+
+
+// draw shelf
+fill(173, 117, 33);
+rect(0, 120, width, 10);
+
+fill(35, 48, 36);
+
+text("Number of books is " + books.length, 300,300);
+
+for (var j = 0; j < books.length; j++){
+    
+    // loop three books
+    fill(214, 255, 219);
+    rect(10 + 100 * j, 20, 90, 100);
+    fill(0, 0, 0);
+    text(books[j].title, 15 + 105 * j, 29, 70, 100);
+    for (var i = 0; i <= books[j].stars; i++) {
+        image(getImage("images/Star.png"), 13 + 100 * i, 90, 20, 30);
+    }
+
+}
+
+// draw one book
+fill(214, 255, 219);
+rect(10, 20, 90, 100);
+fill(0, 0, 0);
+text(books[0].title, 15, 29, 70, 100);
+for (var i = 0; i < books[0].stars; i++) {
+    image(getImage("cute/Star"), 13 + i * 20, 90, 20, 30);
+}
+
+
+// draw second book
+fill(214, 255, 219);
+rect(110, 20, 90, 100);
+fill(0, 0, 0);
+text(books[1].title, 120, 29, 70, 100);
+for (var i = 0; i < books[1].stars; i++) {
+    image(getImage("cute/Star"), 113 + i * 20, 90, 20, 30);
+}
+
+
+// draw third book
+fill(214, 255, 219);
+rect(210, 20, 90, 100);
+fill(0, 0, 0);
+text(books[2].title, 225, 29, 70, 100);
+for (var i = 0; i < books[2].stars; i++) {
+    image(getImage("cute/Star"), 213 + i * 20, 90, 20, 30);
+}
+
+
+
+
+
+
+
+
+};
+		
+
+		
+		
+		
+		
+		
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

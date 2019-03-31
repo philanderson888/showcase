@@ -1,0 +1,15 @@
+<html>
+<head>
+</head>
+<body>
+<button onClick="replaceWindow()">Replace this window
+</button>
+<script>
+function replaceWindow(){
+	var myWindow = window.open("","_self");
+	myWindow.document.write("<p>I replaced the current window</p>");
+}
+
+</script>
+</body>
+</html>

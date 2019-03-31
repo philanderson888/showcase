@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Array Members</title>
+  <script>
+     var myArray = ["", "", ""];
+     function fnAddToArray(x, y, z) {
+      myArray[0] = x;
+      myArray[1] = y;
+      myArray[2] = z;
+      document.getElementById('para1').innerHTML = "<p>The values of the array are</p>"
+      document.getElementById('para1').innerHTML += "<p>" + myArray[0] + "</p>";
+      document.getElementById('para1').innerHTML += "<p>" + myArray[1] + "</p>";
+      document.getElementById('para1').innerHTML += "<p>" + myArray[2] + "</p>";
+      if ((isNaN(myArray[0])) || (isNaN(myArray[1])) || (isNaN(myArray[2]))) {
+        document.getElementById('para2').innerHTML = "Joining the strings gives " + myArray[0] + myArray[1] + myArray[2];
+      }
+      else {
+        document.getElementById('para2').innerHTML = "Adding the 3 numbers gives " + (parseInt(myArray[0]) + parseInt(myArray[1]) + parseInt(myArray[2]));
+      }
+    document.getElementById('para3').innerHTML += "<form><input name='d' value='4' /><button type='button' onclick='fnPop(d.value)'>Click here to add one more member to the array</button></form>"
+    }
+    function fnPop(x) {
+      myArray.push(x);
+      document.getElementById('para4').innerHTML = "The new elements of the array look like this";
+      for (var i = 0; i < myArray.length; i++){
+        document.getElementById('para4').innerHTML += "<p>" + myArray[i] + "</p>";
+      }
+      document.getElementById('para4').innerHTML += "<p>There are " + myArray.length + " elements in the array";
+    }
+  </script>
+</head>
+<body>
+    <form>
+      <input name="a" value="1" />
+      <input name="b" value="2" />
+      <input name="c" value="3" />
+      <button type="button" onclick="fnAddToArray(a.value,b.value,c.value)">Click here to add the members to an array</button>
+    </form>
+    <p id="para1"></p>
+    <p id="para2"></p>
+    <p id="para3"></p>
+    <p id="para4"></p>
+</body>
+</html>

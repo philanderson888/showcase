@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Change Case Of Text</title>
+  <script>
+    function fnChangeCase(inputText) {
+      document.getElementById('para1').innerHTML = "Unmodified text - ";
+      document.getElementById('para1').innerHTML += inputText;
+      document.getElementById('para1').innerHTML += "<p></p>And here is the same text capitalised using .toUpperCase() - ";
+      document.getElementById('para1').innerHTML += inputText.toUpperCase();
+      document.getElementById('para1').innerHTML += "<p></p>And here is the same text as lower case using .toLowerCase() - ";
+      document.getElementById('para1').innerHTML += inputText.toLowerCase();
+    }
+    function fnSlice(index,inputText) {
+      document.getElementById('para2').innerHTML = "The letter at position " + index + " = ";
+      document.getElementById('para2').innerHTML += inputText.slice(index,(parseInt(index)+1));
+      document.getElementById('para2').innerHTML += "<p></p>Also the letters from this point to the end of the string are --->   ";
+      document.getElementById('para2').innerHTML += inputText.slice(index);
+    }
+  </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Change Case Of Text To Upper And Lower Case</h2>
+  <form>
+    <p>
+      Please input a string of text
+    </p>
+    <input type="text" name="inputText" value="This is a string of text that I have just input" style="width:400px;" />
+    <button type="button" onclick="fnChangeCase(inputText.value)">Click here to change case of text</button>
+    <p id="para1"></p>
+      <input type="number" name="sliceIndex" value="8" />
+      <button type="button" onclick="fnSlice(sliceIndex.value,inputText.value)">Click here to display the letter at the index given</button>
+    <p id="para2"></p>
+</form>
+</body>
+</html>

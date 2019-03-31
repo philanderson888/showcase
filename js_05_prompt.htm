@@ -1,0 +1,17 @@
+<html>
+<head>
+</head>
+<body>
+<button onClick="displayPromptValue()">Display Prompt
+</button>
+<script>
+function displayPromptValue(){
+	var response = prompt("What value will you enter?");
+	alert("Text you entered was " + response);
+	document.getElementById('displayhere').innerHTML = "Text you entered was" + response;
+}
+
+</script>
+<p id="displayhere">test</p>
+</body>
+</html>

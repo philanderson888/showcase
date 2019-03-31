@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Lab - Comparing with ==</title>
+    <script>
+      function fnCompare(x, y) {
+        if (x == y) {
+          document.getElementById('para1').innerHTML = "Two elements match";
+        }
+        if (x === y) {
+          document.getElementById('para1').innerHTML += " and they both are the same data type also";
+        }
+      }
+    </script>
+</head>
+<body>
+  <h1>Javascript Lab</h1>
+  <h2>Comparing using ==</h2>
+  <form>
+    <input name="a" type="text" value="Hello" />
+    <input name="b" type="text" value="Hello" />
+    <button type="button" onclick="fnCompare(a.value,b.value)">Click here to compare two strings</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

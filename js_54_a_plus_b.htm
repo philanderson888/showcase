@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javscript Lab - addition</title>
+    <script>
+        function functionAdd(x, y) {
+            alert(x+y);
+            document.getElementById("para").innerText = x + " + " + y + " = " + (x + y);
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Javascript Labs</h1>
+    <h2>Addition</h2>
+    <form>
+        <input type="number" name="a" value="4"/>
+        <input type="number" name="b" value="5"/>
+        <button type="button" onclick="functionAdd(parseInt(a.value),parseInt(b.value))">Click here to add two numbers</button>
+    </form>
+    <p id='para'></p>
+</body>
+</html>

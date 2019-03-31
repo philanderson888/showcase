@@ -1,0 +1,17 @@
+<html><head>
+<script type="text/javascript">
+function validatePhone(phoneField) {
+if (phoneField.value.length < 1) {
+alert("Please enter a phone number");
+return false; 
+}else{
+document.myForm.submit();}
+}
+</script>
+</head>
+<body>
+<form name="myForm" action="confirmation.htm" onsubmit="return validatePhone(this.phoneNumber)" >
+Name: <input type="text" name="userName"/><br/>
+Phone Number: <input type="text" name="phoneNumber"/><br/>
+<input type="submit" value="Submit"/>
+</form></body></html>

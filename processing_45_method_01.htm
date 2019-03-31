@@ -1,0 +1,59 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+
+   /* @pjs preload="images/Hopper-Cool.png"; */
+	 /* @pjs preload="images/Star.png"; */
+	
+}
+
+var hopper = loadImage("images/Hopper-Cool.png");
+
+var Winston = function(nickname, age, x, y) {
+    this.nickname = nickname;
+    this.age = age + "yrs old";
+    this.x = x;
+    this.y = y;
+		void draw() {
+			fill(255, 0, 0);
+			image(hopper, this.x, this.y);
+			var txt = this.nickname + ", " + this.age;
+			text(txt, this.x+20, this.y-10);    
+		}
+};
+
+// the draw method
+
+
+//Winston.prototype.talk = function() {
+ //   text("I'm Winston!", this.x+20, this.y+150);
+//};
+
+var winstonTeen = new Winston("Winsteen", 15, 20, 50);
+//var winstonAdult = new Winston("Mr. Winst-a-lot", 30, 229, 50);
+
+				
+draw = function(){				
+	winstonTeen.draw();
+	//winstonTeen.talk();
+	//winstonAdult.draw();
+	//winstonAdult.talk();
+	noLoop();
+};
+		
+
+
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

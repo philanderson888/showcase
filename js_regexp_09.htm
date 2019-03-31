@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+	<h1>Input Validation Using Regular Expressions RegExp</h1>
+
+	<h2>First Test : Does User Input Contain A Number?</h2>
+
+  <input type="text" name="user_input_text" id="user_input_text"/>
+  <button onclick="myFunction(user_input_text.value)">Is The Input A Number?</button>
+
+<script>
+function myFunction(user_input_text) {
+	var myRegularExpression = /\d/;           /* NUMBERS ONLY */
+ 	var output = myRegularExpression.test(user_input_text);
+ 	console.log("Does the input contain a number? - " + output);
+}
+// \w                          ONLY ALLOW a-z A-Z 0-9 _ text letters and numbers and _ 
+function fnRegExp(user_input_text){
+
+var myLongString = a;
+
+var regExpress = /[a-zA-Z0-9_]/;
+
+var regExpressCheck = regExpress.test(myLongString);
+
+
+
+
+console.log("*****************************************");
+
+console.log(regExpressCheck);
+
+console.log("*****************************************");
+
+}
+
+
+// /D 
+
+
+    function fnRegExp1(a) {
+
+
+var myLongString = a;
+
+var regExpress = /\D/;
+
+var regExpressCheck = regExpress.test(myLongString);
+
+
+
+
+console.log("*****************************************");
+
+console.log(regExpressCheck);
+
+console.log("*****************************************");
+
+
+}
+
+// /W 
+
+// [0-9]   NUMBER 
+
+// [^0-9]    ANYTHING EXCEPT NUMBER                              
+
+// [abc]   ALLOWS ONLY CHARACTERS a,b,c 
+
+// [^abc]  ANY CHARACTER EXCEPT a,b,c
+
+</script>
+
+</body>
+</html>

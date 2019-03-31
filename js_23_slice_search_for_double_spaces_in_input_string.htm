@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Slice - search input for double characters</title>
+    <style>
+        html{
+            background-color:beige;
+            font-family:Arial;
+        }
+        h1{
+            text-decoration:underline;
+            font-style:italic;
+            margin-bottom:72px;
+            text-align:center;
+            font-size:41px;
+        }
+        button{
+            font-size:xx-large;
+        }
+        input[type=text]{
+            font-size:xx-large;
+            display:block;
+            width:100%;
+            margin:20px 0;
+        }
+       .inputArea{
+           background-color:aqua;
+           margin:25px 25px;
+           padding:25px 25px;
+       }
+       .outputArea{
+           background-color:bisque;
+           margin:25px 25px;
+           padding:25px 25px;
+       }
+    </style>
+</head>
+<body>
+   <div class="inputArea">
+       <h1>Check Input For Double Spaces</h1>
+       <input id="txtInput" type="text" value="This is my test input  -  to check for any double spaces...." />
+       <button id="btnParseInput" onclick="fnParseInput()">Click to check input for double spaces</button>
+   </div>
+    <div class="outputArea">
+
+    </div>
+<script>
+    function fnParseInput() {
+        var strInput = document.getElementById('txtInput').value;
+        console.log('Input string is --->>> ' + strInput);
+        var strLength = strInput.length;
+        console.log('Length of input string is ' + strLength + ' characters');
+        for (var i=0;i<strLength;i++){
+            if (strInput.slice(i, i + 2) === '  ') {
+                var strToThisPoint = strInput.slice(0, i);
+                console.log('Double spaces found at point ' + i + ' in the string');
+                console.log('Up to the point the string reads');
+                console.log(strToThisPoint);
+            }
+        }
+    }
+</script>
+</body>
+</html>

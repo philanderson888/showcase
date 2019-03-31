@@ -1,0 +1,83 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup()
+{
+  size(800, 600);
+  background(100);
+  stroke(255);
+  ellipse(50, 50, 25, 25);
+  println('hello web!');
+  noStroke();
+}
+
+var forward = "true";
+var down = "true";
+
+var x = 150;
+var y = 23;
+var incrementing_x = 30;
+var incrementing_y = 30;
+
+void draw(){  
+
+  text("Hello Web!",20,20);
+
+  background(252, 255, 214);
+
+	if (forward == "true"){
+		x = x + incrementing_x;	
+	}	
+	else {
+		x = x - incrementing_x;
+	}
+	
+	
+	if (x >= 600){
+		forward = "false";
+	}
+	
+	if (x <= 0){
+		forward = "true";
+	}
+	
+	
+	if (down == "true"){
+		y = y + incrementing_y;	
+	}	
+	else {
+		y = y - incrementing_y;
+	}
+	
+	
+	if (y >= 600){
+		down = "false";
+	}
+	
+	if (y <= 0){
+		down = "true";
+	}
+	
+	
+  println("Value of x is " + x + " and y is " + y);
+	
+		// draw the car body
+		fill(255, 0, 115);
+		rect(x, y, 100, 20);
+		rect(x+15, y-22, 70, 40);
+
+		// draw the wheels
+		fill(77, 66, 66);
+		ellipse(x+25, y+21, 24, 24);
+		ellipse(x+75, y+21, 24, 24);
+	
+} 
+
+
+</script>
+<canvas id="pjs"> </canvas>
+</body>
+</html>

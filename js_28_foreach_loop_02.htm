@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>For Each</title>
+<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+<script>
+  function output() {
+    var myArray = [1, 2, 3];
+    for (var i = 0; i<myArray.length; i++) {
+      $('#display').append("<p>" + myArray[i] + "</p>");
+    }
+  }
+</script>
+</head>
+<body onload="output()">
+  <div id="display"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+

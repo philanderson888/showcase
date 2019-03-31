@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title></title>
+	<script>
+	var x = new Map();
+	x.set("a","first letter");
+	x.set("b","second letter");
+	x.set("c","third letter");
+	for(var key of x.keys()){
+	  console.log(key + " has value \"" + x.get(key) + "\"");
+	}
+	x.forEach(function(value,key){
+		console.log(key + " has value " + value);
+	});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

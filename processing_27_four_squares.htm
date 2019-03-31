@@ -1,0 +1,72 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+}
+				
+
+		
+draw = function(){
+				
+		background(204,204,204);
+ 
+    fill(204, 204, 204);
+    rect(0, 0, 200, 200); // top left
+    rect(200, 0, 200, 200); // top right
+    rect(0, 200, 200, 200); // bottom left
+    rect(200, 200, 200, 200); // bottom right
+    
+     // first quadrant
+    if (mouseX < 200 && mouseY < 200) {
+        fill(255, 255, 255);
+        rect(0, 0, 200, 200); // top left     
+    }
+    
+    // second quadrant
+    if (mouseX > 200 && mouseY < 200) {
+        fill(255, 255, 255);
+        rect(200, 0, 200, 200); // top right     
+    }
+    
+    // third quadrant
+    if (mouseX < 200 && mouseY > 200) {
+        fill(255, 255, 255);
+        rect(0, 200, 200, 200);      
+    }
+    
+    // fourth quadrant
+    if (mouseX > 200 && mouseY > 200) {
+        fill(255, 255, 255);
+        rect(200, 200, 200, 200); // top right     
+    }
+    
+    
+    if (mouseX === 200 || mouseY === 200 || mouseX < 3 || mouseX > 397) {
+        fill(255, 0, 0);
+        text("EDGE BALL!!!!", 200, 200);
+    }
+
+    
+		if (mouseX <= 400 && mouseY <= 400){
+			fill(0, 0, 0);
+			ellipse(mouseX, mouseY, 30, 30);
+    }
+	
+
+};
+		
+	
+		
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

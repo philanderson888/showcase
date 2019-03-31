@@ -1,0 +1,37 @@
+<HTML>
+ <HEAD>
+     <style>
+         #div_block{
+             height:20px;
+             width:20px;
+             border-radius:20px;
+             background-color:lightgreen;
+             border:solid 2px;
+             border-color:gray;
+             margin-bottom:50px;
+             margin-top:50px;
+         }
+     </style>
+     <script language="JavaScript">
+        var x = 0;
+        var interval;
+        function fn_click() {
+            console.log("Inside Javascript function");
+            interval = setInterval(fn_moveBlock,10);
+        }  /* fn_click */
+        function fn_moveBlock(){
+          x++;
+          var block = document.getElementById('div_block');
+          block.style.marginLeft = x + 'px';
+          if(x > window.innerWidth-300){
+            clearInterval(interval)
+          }
+        }  /* fn_moveBlock() */
+     </script>
+ </HEAD>
+<body>
+    <div id="div_block">
+    </div>
+    <button onclick="fn_click()">Click To Move Div</button>
+</body>
+</HTML>

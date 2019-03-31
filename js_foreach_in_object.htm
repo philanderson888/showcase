@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title></title>
+<script>
+	var x = {};
+	x.field1="value1";
+	x.field2="value2";
+	var y={
+	  field1:"value1",
+	  field2:"value2"
+	}
+	console.log(" x.field1 has value " + x.field1);
+
+	console.log("Object x is ");
+	console.log(x);
+	console.log("Iterating Over x");
+		for (var item in x){
+		if(x.hasOwnProperty(item)){
+			console.log(item + " has value " + x[item]);
+		}
+	}
+	console.log("Iterating Over y");
+	for (var item in y){
+		if(y.hasOwnProperty(item)){
+			console.log(item + " has value " + y[item]);
+		}
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

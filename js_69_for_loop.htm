@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - For Loop</title>
+    <script>
+      function fnForLoop(min, max, step) {
+        document.getElementById('para1').innerHTML = "<p>For loop from " + min + " to " + max + " step " + step;
+        if (min < max) {
+          for (var i = min; i <= max; i = i + step) {
+            document.getElementById('para1').innerHTML += "<br />" + i;
+          }
+        }
+      }
+    </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>For Loop</h2>
+  <form>
+    <p>
+      Min -&nbsp;&nbsp;
+      <input type="number" name="a" value="5" /> 
+    </p>
+    <p>
+      Max -&nbsp;&nbsp;
+      <input type="number" name="b" value="55" />
+    </p>
+    <p>
+      Step -&nbsp;&nbsp;
+      <input type="number" name="step" value="2" />
+    </p>
+    <button type="button" onclick="fnForLoop(parseInt(a.value),parseInt(b.value),parseInt(step.value))">Click here to generate a for loop starting from the lowest number to the higher</button>
+</form>
+  <p id="para1"></p>
+</body>
+</html>

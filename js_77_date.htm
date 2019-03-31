@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Date</title>
+  <script>
+    function fnDate() {
+      var rightNow = new Date();
+      var displayString = "";
+      displayString = "The date functions are as follows, for your chosen date";
+      displayString += "<p>The full date and time right now are " + rightNow + "</p>";
+      displayString += "<p>The day getDay(0-6) today is " + rightNow.getDay() + "</p>";
+      displayString += "<p>The month getMonth(0-11) this month is month " + rightNow.getMonth() + "</p>";
+      displayString += "<p>The date getDate(1-31) this month is " + rightNow.getDate() + "</p>";
+      displayString += "<p>The year (getFullYear()) is " + rightNow.getFullYear() + "</p>";
+      displayString += "<p>The hour (getHours()) is " + rightNow.getHours() + "</p>";
+      displayString += "<p>The minutes (getMinutes()) are " + rightNow.getHours() + "</p>";
+      displayString += "<p>The seconds (getSeconds()) are " + rightNow.getSeconds() + "</p>";
+      displayString += "<p>The milliseconds (getMilliseconds()) are " + rightNow.getMilliseconds() + "</p>";
+      displayString += "<p>The Time Zone Offset (getTimeZoneOffset()) is " + rightNow.getTimezoneOffset() + "</p>";
+      displayString += "<p>The UNIX Time (milliseconds since 1 Jan 1970) is " + rightNow.getTime() + "</p>";
+      var d1 = new Date("June 20, 2017");
+      var d2 = new Date("March 06, 2022 08:17:34.354");
+      displayString += "<p>Date 1 is " + d1 + "</p>";
+      displayString += "<p>Date 2 is " + d2 + "</p>";
+      displayString += "<p>The difference between these dates is " + (d2 - d1) + " (milliseconds)</p>";
+      displayString += "<p>This difference is " + Math.floor((d2 - d1) / (1000 * 60 * 60 * 24)) + " days</p>";
+      document.getElementById('para1').innerHTML = displayString;
+    }
+  </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Date Functions</h2>
+  <form>
+    <input type="date" name="myDate" />
+    <button type="button" onclick="fnDate()">Click here to operate the date functions</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

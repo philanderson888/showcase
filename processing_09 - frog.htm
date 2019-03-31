@@ -1,0 +1,51 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+
+
+void setup()
+{
+  size(400,400);
+  background(125);
+  fill(255);
+  noLoop();
+  PFont fontA = loadFont("courier");
+  textFont(fontA, 14);  
+}
+
+void draw(){  
+	
+	var x = 170;
+	var y = 222;
+
+	noStroke();
+	fill(30, 204, 91); // a nice froggy green!
+
+	ellipse(x, y, 200, 100); // face
+	ellipse(x - 50, y - 50, 40, 40); // left eye socket
+	ellipse(x + 50, y - 50, 40, 40); // right eye socket
+
+	fill(255, 255, 255); // for the whites of the eyes!
+	ellipse(x - 50, y - 50, 30, 30); // left eyeball
+	ellipse(x + 50, y - 50, 30, 30); // right eyeball
+
+
+
+	fill(23, 21, 21);
+	rect(x - 55, y-50, 10, 10);
+	rect(x+45, y-50, 10, 10);
+
+	fill(138, 47, 47);
+
+	ellipse(x,y,133,50);
+
+}
+
+
+</script>
+<canvas id="pjs"> </canvas>
+</body>
+</html>

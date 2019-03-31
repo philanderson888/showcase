@@ -1,0 +1,72 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+
+   /* @pjs preload="images/Hopper-Cool.png"; */
+	 /* @pjs preload="images/Star.png"; */
+	
+}
+
+var SmileyFace = function(centerX,centerY) {
+    this.centerX = centerX;
+    this.centerY = centerY;
+};
+
+
+
+
+var drawSmiley = function(SmileyFace01) {
+    fill(255, 234, 0);
+    ellipse(this.centerX, this.centerY, 150, 150);
+    fill(0, 0, 0);
+    ellipse(this.centerX-30, this.centerY-30, 20, 20); 
+    ellipse(this.centerX+30, this.centerY-30, 20, 20); 
+    noFill(); 
+    strokeWeight(3);
+    arc(this.centerX, this.centerY+10, 64, 40, 0, 180);
+};
+
+
+
+
+SmileyFace.prototype.draw = function() {
+    fill(255, 234, 0);
+    ellipse(this.centerX, this.centerY, 150, 150);
+    fill(0, 0, 0);
+    ellipse(this.centerX-30, this.centerY-30, 20, 20); 
+    ellipse(this.centerX+30, this.centerY-30, 20, 20); 
+    noFill(); 
+    strokeWeight(3);
+    arc(this.centerX, this.centerY+10, 64, 40, 0, 180);
+};
+
+
+var SmileyFace01 = new SmileyFace(99,100);
+var SmileyFace02 = new SmileyFace(276,159);
+var SmileyFace03 = new SmileyFace(210,310);
+
+
+			
+draw = function(){				
+	SmileyFace01.draw();
+	SmileyFace02.draw();
+	SmileyFace03.draw();
+	noLoop();
+};
+		
+
+
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

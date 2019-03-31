@@ -1,0 +1,30 @@
+html{
+    font-family:Arial;
+    font-size:xx-large;
+    background-color:aliceblue;
+}
+ul{
+    list-style-type:none;
+}
+li{
+    display:inline;
+    background-color:beige;
+    margin-left:20px;
+    padding:5px 10px 5px 10px;
+    border:2px solid ActiveBorder;
+    border-radius:10px;
+}
+li:hover{
+    background-color:blanchedalmond;
+}
+ul li ul{
+    display:none;
+    position:absolute;
+}
+ul li ul li{
+    display:block;
+    margin-left:267px;
+}
+ul li:hover ul{
+    display:block;  
+}

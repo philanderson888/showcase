@@ -1,0 +1,76 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+}
+				
+
+// position of the ball
+var x = 20;
+var y = 200;
+// how far the ball moves every time
+var speedX = 25;
+var speedY = 25;
+
+var radius = 25;
+var refreshCount = 0;
+background(202, 255, 97);
+		
+draw = function(){
+				
+
+		
+		
+    
+    fill(66, 66, 66);
+    
+		ellipse(x, y, radius*2, radius*2);
+  
+
+  
+    // move the ball
+    x = x + speedX;
+
+
+    if (x > screen.width-2*radius) {
+        speedX = -speedX;
+    }
+    if (x < radius) {
+        speedX = -speedX;
+				refreshCount++;
+				if (refreshCount >= 10) {
+					background(202, 255, 97);
+					refreshCount = 0;
+				}
+    }
+	
+	    // move the ball
+    y = y + speedY;
+
+
+    if (y > screen.height-6*radius) {
+        speedY = -speedY;
+    }
+    if (y < radius) {
+        speedY = -speedY;
+    }
+	
+	
+
+};
+		
+	
+		
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

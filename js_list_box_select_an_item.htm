@@ -1,0 +1,21 @@
+<html>
+<head>
+<script>
+function displayThirdVavlue(){
+document.getElementById('para1').innerText="The third item has been selected";
+document.getElementById('telephonylist').options.selectedIndex = 2;
+}
+</script>
+</head>
+<body onload="displayThirdVavlue()">
+<p>Which letter is chosen?</p>
+<form name="myForm">
+	<select id="telephonylist">
+		<option value="a">Alpha</option>
+		<option value="b">Beta</option>
+		<option value="c">Charlie</option>
+		<option value="d">Delta</option>
+	</select><br/>
+</form>
+<div id='para1'></div>
+</html>

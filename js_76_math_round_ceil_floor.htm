@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Maths Round, Ceiling and Floor</title>
+    <script>
+      function fnOutputValues(x) {
+        document.getElementById('para1').innerHTML = "Your number is " + x;
+        document.getElementById('para1').innerHTML += "<p>Math.round() = " + Math.round(x) + " rounding to the nearest integer</p>";
+        document.getElementById('para1').innerHTML += "<p>Math.floor() = " + Math.floor(x) + " rounding to the next integer down</p>";
+        document.getElementById('para1').innerHTML += "<p>Math.ceil() = " + Math.ceil(x) + " rounding to the next integer up</p>";
+      }
+    </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Maths Round, Ceiling And Floor Functions</h2>
+  <form>
+    <input type="number" name="a" value="16.325" />
+    <button type="button" onclick="fnOutputValues(parseFloat(a.value))">Click here to output the rounding, ceiling and floor functions for your number</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Javascript Clock</title>
+  <style>
+    #clock{
+      font-size:50px;
+    }
+  </style>
+  <script>
+    function fnClock() {
+      var myDate = new Date();
+      document.getElementById('clock').innerHTML = myDate.toString();
+      setTimeout("fnClock()", 1000);
+    }
+  </script>
+</head>
+<body onload="fnClock()">
+  <p id="clock"></p>
+</body>
+</html>

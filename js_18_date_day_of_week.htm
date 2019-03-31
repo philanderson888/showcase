@@ -1,0 +1,49 @@
+<html>
+<head>
+</head>
+<body>
+<p id="showDate"></p>
+<p id="demo"></p>
+<p id="whatDayOfWeekIsIt"></p>
+<script>
+var myDate = new Date();
+document.getElementById("showDate").innerHTML = myDate;
+var myTime = myDate.getHours();
+var myDay = myDate.getDay();
+if (myTime < 10){
+document.getElementById("demo").outerHTML = "<p>Time is " + myTime + ".00 hours, so <b>Good morning!</b></p>";
+}
+else{
+document.getElementById("demo").outerHTML = "<p>Time is " + myTime + ".00 hours, so <b>Good day!</b></p>";
+}
+
+
+switch(myDay){
+ case 0:
+	document.getElementById("whatDayOfWeekIsIt").outerHTML += "<p>It's a Sunday!!!</p>";
+  break;
+case 1:
+	document.getElementById("whatDayOfWeekIsIt").outerHTML += "<p>It's a Monday!!!</p>";
+  break;
+case 4:
+	document.getElementById("whatDayOfWeekIsIt").outerHTML += "<p>It's a Thursday!!!</p>";
+  break;
+case 5:
+	document.getElementById("whatDayOfWeekIsIt").outerHTML += "<p>It's a Friday!!!</p>";
+  break;
+case 6:
+	document.getElementById("whatDayOfWeekIsIt").outerHTML += "<p>It's a Saturday!!!</p>";
+  break;
+case 7:
+	document.getElementById("whatDayOfWeekIsIt").outerHTML += "<p>It's a Sunday!!!</p>";
+  break;
+
+}
+
+document.getElementById("whatDayOfWeekIsIt").outerHTML += "<p>Day Of Week Is " + myDay + "</p>";
+
+
+</script>
+
+</body>
+</html>

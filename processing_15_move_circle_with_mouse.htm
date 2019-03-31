@@ -1,0 +1,39 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+
+void setup() {
+  size(screen.width, screen.height);
+}
+
+// mouseX and mouseY
+
+strokeWeight(3);
+stroke(57, 0, 214);
+fill(42, 224, 63);
+
+draw = function() {
+    
+  //  background(255, 255, 255);
+		strokeWeight(3);
+		stroke(57, 0, 214);
+    fill(42, 224, 63);
+    ellipse(mouseX, mouseY, 60, 60);
+    
+};
+
+
+
+
+								
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

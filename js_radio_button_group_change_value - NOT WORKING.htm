@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+function changeValue(){
+console.log(document.myForm.rdoGroup1[0].value);document.myForm.rdoGroup1[0].value = "Green";
+console.log(document.myForm.rdoGroup1[0].value);
+var label = document.myForm.rdoGroup1[0].next();
+label.text="Options"; 
+
+}
+</script>
+</head>
+<body>
+<p>What's your favorite color?</p>
+<form name="myForm">
+	<input type="radio" name="rdoGroup1" id="opt1" value="Red"/>Red<br/>
+	<input type="radio" name="rdoGroup1" id="opt2" value="Orange"/>Orange<br/>
+	<input type="radio" name="rdoGroup1" id="opt3" value="Purple"/>Purple<br/>
+	<button type="button" onclick="changeValue()">Click to change value</button>
+</form>
+
+<div id='para1'></div>
+</body>
+</html>

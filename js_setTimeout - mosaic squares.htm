@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Javascript Clock</title>
+  <style>
+    #clock{
+      font-size:50px;
+    }
+	.yellow{
+	background-color:yellow;
+	}
+  </style>
+  <script>
+    function fnClock() {
+      var myDate = new Date();
+      document.getElementById('clock').innerHTML = myDate.toString();
+	  setTimeout("fnClock()", 1000);
+    }
+	function fnYellow(){
+	  document.getElementById('yellow').style.backgroundColor = "yellow";
+	  setTimeout("fnGreen()",1000);
+	}
+	function fnGreen(){
+	  document.getElementById('green').style.backgroundColor = "green";
+	  setTimeout("fnBlue()",1000)
+	}
+	function fnBlue(){
+	  document.getElementById('blue').style.backgroundColor = "blue";
+	  setTimeout("fnOrange()",1000);
+	}
+	function fnOrange(){
+	  document.getElementById('orange').style.backgroundColor = "orange";
+	}
+	
+  </script>
+</head>
+<body onload="fnYellow(); fnClock();">
+  <p id="clock"></p>
+<table>
+  <tr>
+    <th>Header1</th>
+    <th>Header2</th>
+    <th>Header3</th>
+    <th>Header4</th>
+    <th>Header5</th>
+  </tr>
+  <tr>
+    <td>Detail1</td>
+    <td>Detail2</td>
+    <td>Detail3</td>
+    <td>Detail4</td>
+    <td>Detail5</td>
+  </tr>
+  <tr>
+    <td>Detail1</td>
+    <td id="yellow">Detail2</td>
+    <td>Detail3</td>
+    <td>Detail4</td>
+    <td>Detail5</td>
+  </tr>
+  <tr>
+    <td id="blue">Detail1</td>
+    <td>Detail2</td>
+    <td id="green">Detail3</td>
+    <td>Detail4</td>
+    <td>Detail5</td>
+  </tr>
+  <tr>
+    <td>Detail1</td>
+    <td id="orange">Detail2</td>
+    <td>Detail3</td>
+    <td>Detail4</td>
+    <td>Detail5</td>
+  </tr>
+</table>
+</body>
+</html>

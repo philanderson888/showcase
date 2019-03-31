@@ -1,0 +1,72 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+  strokeWeight( 10 );
+  frameRate( 15 );
+  X = width / 2;
+  Y = height / 2;
+  nX = X;
+  nY = Y;  
+
+   /* @pjs preload="images/Hopper-Cool.png"; */
+	 /* @pjs preload="images/Star.png"; */
+	
+}
+
+
+// Global variables
+float radius = 50.0;
+int X, Y;
+int nX, nY;
+int delay = 16;
+
+
+// Main draw loop
+void draw(){
+  
+  radius = radius + sin( frameCount / 4 );
+  
+  // Track circle to new destination
+  X+=(nX-X)/delay;
+  Y+=(nY-Y)/delay;
+  
+  // Fill canvas grey
+  background( 100 );
+  
+  // Set fill-color to blue
+  fill( 0, 121, 184 );
+  
+  // Set stroke-color white
+  stroke(255); 
+  
+  // Draw circle
+  ellipse( X, Y, radius, radius );                  
+}
+
+
+// Set circle's next destination
+void mouseMoved(){
+  nX = mouseX;
+  nY = mouseY;  
+}
+
+
+
+		
+
+
+
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

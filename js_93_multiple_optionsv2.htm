@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Javascript Lab - Radio Buttons</title> 
+ <style>
+   *{
+     font:50px Arial;
+   }
+ </style>
+  <script>
+    function fnCheckStatus(form) {
+      var len = form.mySelect.length;
+      var output = "Length is " + len;
+      for (var i = 0; i < len; i++) {
+        if (form.mySelect[i].selected) {
+          output += "<p>Value chosen is " + form.mySelect[i].value +"</p>";
+        }
+      }
+      document.getElementById('para1').innerHTML = output;
+    }
+
+  </script>
+</head>
+<body>
+  <form id="myForm" name="myForm">
+    <select multiple name="mySelect" onchange="fnCheckStatus(myForm)">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

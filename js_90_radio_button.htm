@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Javascript Lab - Radio Buttons</title>
+  <style>
+    *{
+      font-size:50px;
+      font-family:Arial;
+    }
+  </style>
+  <script>
+    function fnCheckStatus(form) {
+      if (form.radio1.checked) {
+        document.getElementById('para1').innerHTML = "Selected";
+      }
+      else {
+        document.getElementById('para1').innerHTML = "Not selected";
+      }
+    }
+  </script>
+</head>
+<body>
+<form id="myForm">
+  <input type="radio" name="radio1" value="selected" onclick="fnCheckStatus(myForm)" />
+  <input type="button" name="btnCheck" onclick="fnCheckStatus(myForm)" value="Click here to check status of the radio button" />
+</form>
+  <p id="para1"></p>
+</body>
+</html>

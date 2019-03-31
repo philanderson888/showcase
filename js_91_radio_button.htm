@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Javascript Lab - Radio Buttons</title>  
+  <style>
+    *{
+      font-size:50px;
+      font-family:Arial;
+    }
+    input{
+      display:block;
+    }
+  </style>
+  <script>
+    function fnStatus(form) {
+      for (var i = 0; i <= form.radioGroup.length; i++) {
+        if (form.radioGroup[i].checked) {
+          document.getElementById('para1').innerHTML = "This is selected - " + form.radioGroup[i].value;
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <form name="myForm">
+    <span>1</span>
+    <input type="radio" name="radioGroup" value="Radio Button 1" onclick="fnStatus(myForm)" />
+    <span>2</span>
+    <input type="radio" name="radioGroup" value="Radio Button 2" onclick="fnStatus(myForm)" />
+    <span>3</span>
+    <input type="radio" name="radioGroup" value="Radio Button 3" onclick="fnStatus(myForm)" />
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

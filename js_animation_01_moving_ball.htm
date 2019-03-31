@@ -1,0 +1,41 @@
+<HTML>
+ <HEAD>
+
+     <style>
+         #div_block{
+             height:20px;
+             width:20px;
+             border-radius:20px;
+             background-color:lightgreen;
+             border:solid 2px;
+             border-color:gray;
+             margin-bottom:50px;
+             margin-top:50px;
+         }
+     </style>
+
+     <script language="JavaScript">
+         function fn_click() {
+            console.log("Inside Javascript function");
+            var block = document.getElementById('div_block');
+            var x = 0;
+            do{
+                x++;
+                block.style.marginLeft = x + 'px';
+            }
+            while(x<=window.innerWidth-30)
+        }  /* fn_click */
+     </script>
+
+
+
+ </HEAD>
+
+<body>
+    <div id="div_block">
+    </div>
+    <button onclick="fn_click()">Click To Move Div</button>
+
+
+</body>
+</HTML>

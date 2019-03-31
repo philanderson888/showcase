@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs</title>
+  <script>
+    function fnLocalGlobal() {
+      var a = 506;  /* GLOBAL */
+      document.getElementById('para1').innerHTML = "<p>The GLOBAL value of the variable is " + a + "</p>";
+      callFunction();
+    }
+    function callFunction() {
+      var a = 5; /* LOCAL */
+      document.getElementById('para1').innerHTML += "<p>The LOCAL value of the variable is " + a + "</p>";
+    }
+ 
+  </script>
+</head>
+<body onload="fnLocalGlobal()">
+  <h1>Javascript Labs</h1>
+  <h2>Local and Global Functions</h2>
+  <p id="para1"></p>
+</body>
+</html>

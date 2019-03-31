@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Javascript Lab - Create An Object</title> 
+  <style>
+    *{
+      font-family:Arial;
+    }
+  </style>
+  <script>
+    var myEmployeeList = [];
+    function employee(empName, department, extension) {
+      this.empName = empName;
+      this.department = department;
+      this.extension = extension;
+    }
+    function fnAddEmployee(empName, dept, ext) {
+      console.log("myEmployeeList.length = " + myEmployeeList.length)
+      console.log(empName + dept + ext);
+      myEmployeeList[myEmployeeList.length] =  new employee(empName, dept, ext);
+
+      console.log("myEmployeeList[0].empName = " + myEmployeeList[0].empName);
+      var output = "";
+      for (var i = 0; i < myEmployeeList.length; i++) {
+        console.log("i is " + i);
+        output += "<p>Employee " + i + " : " + myEmployeeList[i].empName + " : " + myEmployeeList[i].department + " : " + myEmployeeList[i].extension + "</p>";
+      }
+      output += "<p>There are now " + myEmployeeList.length + " employees</p>";
+      document.getElementById('para1').innerHTML = output;
+    }
+  </script>
+</head>
+<body>
+ <h1>Javascript Labs</h1>
+  <h2>Creating Objects</h2>
+  <h3>In this tutorial we will create employee objects</h3>
+  <form>
+    <input type="text" name="empName" value="Peter Jones" />
+    <input type="text" name="dept" value="Accounts" />
+    <input type="tel" name="ext" value="234" />
+    <button type="button" onclick="fnAddEmployee(empName.value,dept.value,ext.value)">Click here to add an employee</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

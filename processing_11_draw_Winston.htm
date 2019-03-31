@@ -1,0 +1,52 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+
+
+void setup()
+{
+  size(400,400);
+  background(125);
+  fill(255);
+  noLoop();
+  PFont fontA = loadFont("courier");
+  textFont(fontA, 14);  
+}
+
+void draw(){  
+									
+			drawWinston();				
+
+
+}
+
+
+var drawWinston = function() {
+		noStroke();
+		
+		// face
+		fill(255, 255, 0);
+		ellipse(202, 208, 300, 300);
+		
+		// eyes
+		fill(46, 46, 41);
+		ellipse(157, 151, 40, 40);
+		ellipse(304, 142, 40, 40);
+		
+		// mouth
+		fill(252, 65, 65);
+		ellipse(257, 240, 120, 136);
+};
+
+								
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

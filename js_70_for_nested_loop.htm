@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javasript Labs - Nested Loops</title>
+  <script>
+    function fnNestedForLoop() {
+      document.getElementById('para1').innerHTML = "";
+      for (var i = 1; i <= 10; i++) {
+        document.getElementById('para1').innerHTML += "<p>The value of i is " + i + "</p>";
+
+        for (var j = 1; j <= 10; j++) {
+          document.getElementById('para1').innerHTML += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j = " + j;
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Nested For Loops - Loop from i = 1 to 10 and j = 1 to 10</h2>
+  <button type="button" onclick="fnNestedForLoop()">Click here to run a nested for loop</button>
+  <p id="para1"></p>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+function fruit(title,weight){<br />
+  this.title=title;<br />
+  this.weight=weight;<br />
+}<br />
+<br />
+<br />
+<br />
+var apple = new fruit("apple",200);<br />
+<br />
+var banana = new fruit("banana",300);<br />
+<br />
+<br />
+var fruitArray = [];<br />
+fruitArray.push(apple);<br />
+fruitArray.push(banana);<br />
+<br />
+<br />
+for( var i = 0; i< fruitArray.length; i++){<br />
+  document.getElementById("demo").innerHTML += "<br />" +<br />
+  fruitArray[i].title+ " has weight " + fruitArray[i].weight;<br />
+}<br />
+<br />
+
+<p id="demo"></p>
+
+<script>
+function fruit(title,weight){
+  this.title=title;
+  this.weight=weight;
+}
+
+
+
+var apple = new fruit("apple",200);
+
+var banana = new fruit("banana",300);
+
+
+var fruitArray = [];
+fruitArray.push(apple);
+fruitArray.push(banana);
+
+
+for( var i = 0; i< fruitArray.length; i++){
+  document.getElementById("demo").innerHTML += "<br />" +
+  fruitArray[i].title+ " has weight " + fruitArray[i].weight;
+}
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+<title>Using JSON</title>
+</head>
+<body>
+<h2>Traverse Shopping List</h2>
+<p>
+Item Name: <span id="item"></span><br />
+Quantity: <span id="qty"></span><br />
+Price: <span id="cost"></span><br />
+</p>
+<input type="button" value="Next Shopping List Item" onclick="nextItem()">
+<script>
+var count = 0;
+function nextItem()
+{
+var txt =' { "shoppingList":['+
+'{ "itemName":"Apples", "quantity":"16", "price":1.29},'+
+'{ "itemName":"cereal", "quantity":"2", "price":2.29}, '+
+'{ "itemName":"milk", "quantity":"1", "price":3.29}, '+
+'{ "itemName":"bread", "quantity":"2", "price":1.39}, '+
+'{ "itemName":"cheese", "quantity":"1", "price":2.49}]}';
+var obj=eval("("+txt+")");
+document.getElementById("item").innerHTML=obj.shoppingList[count].itemName;
+document.getElementById("qty").innerHTML=obj.shoppingList[count].quantity;
+document.getElementById("cost").innerHTML=obj.shoppingList[count].price;
+if(count<4)
+count++;
+else
+count=0;
+}
+
+</script>
+</body>
+</html>
+
+

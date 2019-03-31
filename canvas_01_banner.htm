@@ -1,0 +1,102 @@
+<html>
+<head>
+<script>
+ var canvas, ctx,
+        x = 180,  y = 160,              // central point 
+        r = 5,                          // radius of beg circle 
+        r1 = 5,                         // radius of other circles 
+        xs = [0, 0, 0, 0, 0, 0],        // initial values of X for small circles 
+        ys = [0, 0, 0, 0, 0, 0],        // initial values of Y for small circles 
+
+        x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6; 
+                                        // central points of small circles
+        angle = [1, 2, 3, 4, 5, 6],     // distances/angles of circles 
+        wait = 60,                      // duration
+        WIDTH = 360,                    // Canvas width
+        HEIGHT = 320;                   // Canvas Height
+
+    function circle(x, y, r) {          // Draw a circle 
+        ctx.beginPath();
+        var crcl = ctx.arc(x, y, r, 0, Math.PI * 2, true);
+        ctx.fill();
+    }
+
+    function clear() {                    // Clear the canvas
+        ctx.clearRect(0, 0, WIDTH, HEIGHT);
+    }
+
+    function draw() {    
+        clear();
+
+        if (r < 81) {
+            for (var i = 0; i < xs.length; i++) {
+                xs[i] = x + Math.cos(angle[i]) * (r + r1 - 5);
+                ys[i] = y + Math.sin(angle[i]) * (r + r1 - 5);
+                angle[i] += .1;
+            }
+        }
+        ctx.fillStyle = "#7f93ae";
+        circle(x, y, r);
+
+        ctx.fillStyle = "#4a8e29";
+        circle(xs[0], ys[0], r1);
+
+        ctx.fillStyle = "#2031a3";
+        circle(xs[1], ys[1], r1);
+
+        ctx.fillStyle = "#d9d939";
+        circle(xs[2],ys[2], r1);
+
+        ctx.fillStyle = "#e96360";
+        circle(xs[3], ys[3],r1);
+
+        ctx.fillStyle = "#834b92";
+        circle(xs[4], ys[4], r1);
+
+        ctx.fillStyle = "#d28245";
+        circle(xs[5], ys[5], r1);
+
+        if (r <= 100)
+            r += 1;
+
+        if (r1 <= 50) {
+            r1 += .5;
+        }
+
+        if (r >= 81) {
+            ctx.fillStyle = "#000";
+            ctx.font = "24px verdana";
+            ctx.textAlign = "center";
+            ctx.fillText('JS', x, y-3);
+            ctx.fillText('Queries', x, y + 25);
+
+            // Small circles 
+            ctx.font = "12px verdana";
+            ctx.fillText('Rapha&euml;l', xs[0], ys[0] - 3);
+            ctx.fillText('JS', xs[0], ys[0] + 12);
+            ctx.fillText('Knockout', xs[1], ys[1] - 3);
+            ctx.fillText('JS', xs[1], ys[1] + 12);
+            ctx.fillText('JQuery', xs[2], ys[2] - 3);
+            ctx.fillText('JQuery UI', xs[2], ys[2] + 12);
+            ctx.fillText('Angular', xs[3], ys[3] - 3);
+            ctx.fillText('JS', xs[3], ys[3] + 12);
+            ctx.fillText('Node', xs[4], ys[4] - 3);
+            ctx.fillText('JS', xs[4], ys[4] + 12);
+            ctx.fillText('Backbone', xs[5], ys[5] - 3);
+            ctx.fillText('JS', xs[5], ys[5] + 12);
+        }
+    }
+    window.onload = function () {
+ 
+        canvas = document.getElementById("canvas");
+        ctx = canvas.getContext("2d");
+        ctx.globalAlpha = .8;
+
+        return setInterval(draw, wait);
+    }
+</script>
+</head>
+<body>
+<canvas id="canvas" width="360" height="320" style="background: #ccc" ></canvas>
+</body>
+</html>

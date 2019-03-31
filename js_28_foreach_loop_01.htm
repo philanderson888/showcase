@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Javascript Foreach Loop</title>
+<script>
+var outputString = "";
+var myArray=["a","b","c"];
+function fn_for_each_loop(){
+	outputstring = "";
+	outputString = "Array is " + myArray;
+	outputString += "<br /><br />";
+	myArray.forEach(function(element,index,array){
+		outputString += 'myArray[' + index + '] = ' + element + "<br />";
+	});
+	document.getElementById('display').innerHTML=outputString;
+}
+</script>
+</head>
+<body>
+<button type="button" onclick="fn_for_each_loop()">Click To Run Foreach Loop</button>
+<div id="display">
+</div>
+</body>
+</html>

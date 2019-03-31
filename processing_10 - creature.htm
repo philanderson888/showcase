@@ -1,0 +1,50 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+
+
+void setup()
+{
+  size(400,400);
+  background(125);
+  fill(255);
+  noLoop();
+  PFont fontA = loadFont("courier");
+  textFont(fontA, 14);  
+}
+
+void draw(){  
+	
+	var xPosition = 200;
+	var yPosition = 200;
+	var bodySize = 132;
+	var faceSize = bodySize/2;
+	var eyeSize = faceSize/5;
+	var facePosition = yPosition-faceSize;
+
+	//body
+	fill(133, 214, 161);
+	ellipse(xPosition, yPosition, bodySize, bodySize); // body?
+
+
+	// face
+	fill(106, 168, 127);
+	ellipse(xPosition, facePosition, faceSize, faceSize); // face
+
+	//eyes
+	fill(245, 214, 14);
+	ellipse(xPosition-faceSize/5,facePosition-eyeSize/2, eyeSize,eyeSize);
+	ellipse(xPosition+faceSize/5,facePosition-eyeSize/2, eyeSize,eyeSize);
+
+
+
+}
+
+
+</script>
+<canvas id="pjs"> </canvas>
+</body>
+</html>

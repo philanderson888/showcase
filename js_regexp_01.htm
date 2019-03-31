@@ -1,0 +1,16 @@
+<html>
+<body>
+<h1>Regular Expressions = RegExp</h1>
+<h2>var mystring = "This is some long text";</h2>
+<h2>var indexOfMatch = mystring.search(/long/);</h2>
+<h2 id='output'></h2>
+<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+<script>
+$(document).ready(function(){
+	var mystring = "This is some long text";
+	var indexOfMatch = mystring.search(/long/);
+	$("#output").text("long is found inside mystring at position " + indexOfMatch);
+});
+</script>
+</body>
+</html>

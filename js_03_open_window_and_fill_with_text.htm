@@ -1,0 +1,15 @@
+<html>
+<head>
+</head>
+<body>
+<button onClick="newWindow()">New Window With Text
+</button>
+<script>
+function newWindow(){
+	var myWindow = window.open("","MsgWindow","width=200, height=200");
+	myWindow.document.write("<p>This is MsgWindow.  I am 200 by 200 pixels wide and high.</p>");
+}
+
+</script>
+</body>
+</html>

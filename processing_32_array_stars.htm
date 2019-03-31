@@ -1,0 +1,97 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+
+void setup() {
+  size(screen.width, screen.height);
+	
+   /* @pjs preload="images/Star.png"; */
+
+}
+				
+var xPositions = [100,200];
+var yPositions = [200,300];
+
+
+		
+draw = function(){
+				
+  //background(9, 5, 59);
+    imageMode(CENTER);
+		
+		var star = loadImage("images/Hopper-Cool.png");
+
+    for (var i = 0; i < yPositions.length; i++) {
+        image(star, xPositions[i], yPositions[i], 30, 30);	
+    }
+
+};
+		
+	
+		
+
+var mouseClicked = function() {
+     
+    
+    xPositions.push(mouseX);
+    yPositions.push(mouseY);
+    var randomX = random(400);
+    var randomY = random(400);
+    xPositions.push(randomX);
+    yPositions.push(randomY);
+    
+    drawStars();
+
+     
+};
+
+		
+		
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>
+
+
+<!-- Document Header Starts 
+
+/* This code all worked at Khan academy 
+
+var xPositions = [100,200];
+var yPositions = [200,300];
+
+var drawStars = function() {
+    //background(9, 5, 59);
+    imageMode(CENTER);
+    for (var i = 0; i < yPositions.length; i++) {
+        image(getImage("cute/Star"), xPositions[i], yPositions[i], 30, 30);
+    }
+};
+
+drawStars();
+
+var mouseClicked = function() {
+     
+    
+    xPositions.push(mouseX);
+    yPositions.push(mouseY);
+    var randomX = random(400);
+    var randomY = random(400);
+    xPositions.push(randomX);
+    yPositions.push(randomY);
+    
+    drawStars();
+
+     
+};
+
+
+-->
+

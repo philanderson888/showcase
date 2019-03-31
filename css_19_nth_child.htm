@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>CSS Nth Child</title>
+<style>
+.list{
+    width: 300px;
+    overflow: hidden;
+}
+.item{
+    float: left;
+    width: 90px;
+    background: yellow;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.item:nth-child(3n){
+    background: brown;
+}
+
+.item:nth-child(3n):after{
+    content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+}
+
+.item:nth-of-type(3n+1){
+    clear:left;
+}
+</style>
+</head>
+<body>
+<div class="list">
+    <div class="item">Lorem ipsum dolor sit amet,</div>
+    <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+    <div class="item">Lorem ipsum dolor sit amet,</div>
+    <div class="item">Lorem ipsum dolor sit amet,</div>
+    <div class="item">Lorem ipsum dolor sit amet</div>
+    <div class="item">Lorem ipsum dolor sit amet,</div>
+    <div class="item">Lorem ipsum dolor sit amet,</div>
+    <div class="item">Lorem ipsum dolor sit amet</div>
+    <div class="item">Lorem ipsum dolor sit amet,</div>
+    <div class="item">Lorem ipsum dolor sit amet,</div>
+    <div class="item">Lorem ipsum dolor sit amet</div>
+    <div class="item">Lorem ipsum dolor sit amet,</div>
+    <div class="item">Lorem ipsum dolor sit amet,</div>
+    <div class="item">Lorem ipsum dolor sit amet</div>
+    <div class="item">Lorem ipsum dolor sit amet,</div>
+    <div class="item">Lorem ipsum dolor sit amet,</div>
+    <div class="item">Lorem ipsum dolor sit amet</div>
+</div>
+</body>
+</html>

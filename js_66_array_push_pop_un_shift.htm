@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Array Push And Pop</title>
+    <script>
+      var myArray = [65, 33, 247, 369, 458, 563];
+      function fnDisplayArray(){
+        document.getElementById('para1').innerHTML = "There are " + myArray.length + " members in the array : ";
+        for (var i = 0; i < myArray.length; i++) {
+          document.getElementById('para1').innerHTML += "<p> " + i + ": " + myArray[i] + "</p>";
+        }
+      }
+      function fnPush(x) {
+        myArray.push(x);
+        fnDisplayArray();
+      }
+      function fnPop() {
+        myArray.pop();
+        fnDisplayArray();
+      }
+      function fnUnshift(x) {
+        myArray.unshift(x);
+        fnDisplayArray();
+      }
+      function fnShift() {
+        myArray.shift();
+        fnDisplayArray();
+      }
+    </script>
+</head>
+<body onload="fnDisplayArray()">
+  <h1>Javascript Labs</h1>
+  <h2>Array Push And Pop</h2>
+  <form>
+    <input type="number" value="16" name="a" />
+    <button type="button" onclick="fnPush(a.value)">Click here to PUSH an item onto the end of the array</button>
+    <button type="button" onclick="fnPop()">Click here to POP (remove) an item from the end of the array</button>
+    <p>
+      <button type="button" onclick="fnUnshift(a.value)">Click here to UN-SHIFT (add an item) to the start of the array</button>
+      <button type="button" onclick="fnShift()">Click here to SHIFT (remove an item from the start of the array)</button>
+    </p>
+  
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

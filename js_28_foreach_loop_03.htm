@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+  <script>
+  $(document).ready(function(){
+    var x=0;
+    var myArray=[1,2,3];
+    $('#display').append("<h1>Array Items Below</h1>");
+    myArray.forEach(function(item){
+      console.log(item);
+      $('#display').append("<h1>" + item + "</h1>");
+    });
+  });
+  </script>
+  <body>
+    <div id="display"></div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+
+
+ArrayList <Drawing> drawings = new ArrayList <Drawing>();
+color c = color(0,0,192);
+
+void setup() {
+  size(screen.width,screen.height);
+  background(255);
+  colorMode(HSB);
+}
+
+void draw() {
+}
+
+void mouseDragged() {
+
+  drawings.add(new Drawing(mouseX, mouseY));
+
+  for (int i = drawings.size()-1;i>0;i--) {
+    Drawing current  = drawings.get(i);//store the current drawing
+    Drawing previous = drawings.get(i-1);//store the previous drawing
+    current  = previous;//point the current to the previous
+    //drawings.get(i) = drawing.get(i-1);
+  }
+
+  for (int i=0;i<drawings.size();i++) {
+    fill(c, 100);
+    drawings.get(i).display();
+  }
+}
+
+
+class Drawing {
+  float x, y, r;
+  color c;
+
+  Drawing(float ax, float ay) {
+    x=ax;
+    y=ay;
+    r=random(2, 20);
+    c=color(random(100, 200), 255, 255);
+  }  
+
+  void display() {
+    fill(c, 100);
+//    ellipse(drawing[i], r, r);
+    ellipse(x,y,r,r);
+  }
+}
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>
+

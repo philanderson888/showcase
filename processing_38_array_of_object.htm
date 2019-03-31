@@ -1,0 +1,76 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+
+void setup() {
+  size(screen.width, screen.height);
+}
+			
+
+arrayList movies = [
+    {
+        title: "Puff the Magic Dragon",
+        review: "Best movie ever!!"
+    },
+    {
+        title: "Peter Pan",
+        review: "Excellent!!"
+    },
+    {
+        title: "Peter Pan",
+        review: "Excellent!!"
+    }
+    
+];
+
+			
+		
+		
+draw = function(){	
+
+	for (var i = 0; i<movies.length;i++){
+			
+			fill(84, 140, 209);
+			textAlign(CENTER, CENTER);
+			textSize(20);
+			text(movies[i].title, 200, 25 + 50 * i);
+			textSize(15);
+			text(movies[0].review, 200, 50 + 50 * i);
+
+	}
+
+
+};
+		
+	
+mouseClicked = function(){
+		
+		if (mouseClicked){
+			movies.add(new movie("abc", "def"));
+			
+				for (var i = 0; i<movies.length;i++){
+			
+			fill(84, 140, 209);
+			textAlign(CENTER, CENTER);
+			textSize(20);
+			text(movies[i].title, 200, 25 + 50 * i);
+			textSize(15);
+			text(movies[0].review, 200, 50 + 50 * i);
+
+	}
+	
+		}					
+}	
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>
+

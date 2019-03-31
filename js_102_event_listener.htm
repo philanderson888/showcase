@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <h1>Events</h1>
+    <input type="button" id="one" value="one" />
+    <input type="button" id="two" value="two" />
+    <input type="button" id="three" value="three" />
+
+    <div id="a2zButtons"></div>
+
+
+    <script>
+        function sayHello() {
+            alert('hello');
+        }
+
+        function sayGoodbye() {
+            alert('goodbye');
+        }
+
+
+        one.onclick = function () {
+            alert('one');
+        }
+
+        two.onclick = sayHello; //event handler
+
+        three.addEventListener('click', sayHello);
+        three.addEventListener('click', sayGoodbye);
+
+        three.removeEventListener('click', sayGoodbye);
+
+        for(var i=0 ; i < 26 ; i++){
+            var newButton = document.createElement('input');
+            newButton.type = "button";
+            newButton.value = String.fromCharCode(65 + i);
+            newButton.id = 'button' + newButton.value;
+            a2zButtons.appendChild(newButton);
+        }
+        buttonA.onclick = function (e) {
+            alert('button A!');
+        }
+
+        a2zButtons.addEventListener('click', function (e) {
+            alert('all buttons');
+        });
+
+    </script>
+
+
+
+</body>
+</html>

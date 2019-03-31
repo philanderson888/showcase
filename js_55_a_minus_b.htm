@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function functionSubtract(x, y) {
+            document.getElementById("para").innerText = x + " - " + y + " = " + (x - y);
+        }
+    </script>
+</head>
+<body>
+<h1>Javascript Labs</h1>
+    <h2>Subtraction</h2>
+    <form>
+        <input type="number" value="22" name="a" />
+        &nbsp;-&nbsp;
+        <input type="number" value="16" name="b" />
+        <button type="button" onclick="functionSubtract(parseInt(a.value),parseInt(b.value))">Click to subtract the two numbers</button>
+    </form>
+    <p id="para"></p>
+</body>
+</html>

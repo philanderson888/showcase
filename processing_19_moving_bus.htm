@@ -1,0 +1,59 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+}
+				
+var xPos = 10; 
+var yPos = screen.height*3/4;
+var busDirection = "toRight";
+
+draw = function() {
+    
+    background(255, 255, 255);
+    
+    // horizon
+    line(0, yPos, screen.width, yPos);
+    
+    
+    // bus 
+    rect(xPos-40,yPos-15,130,-50);
+    
+    // window
+    rect (xPos+52,yPos-50,28,24);
+    
+    // left wheel
+    fill(0, 0, 0);
+    ellipse(xPos, yPos-15, 30, 30); // a wheel
+    fill(255, 255, 255);
+    ellipse(xPos, yPos-15, 10, 10);
+    
+    // right wheel
+    fill(0, 0, 0);
+    ellipse(xPos+50, yPos-15, 30, 30); // a wheel
+    fill(255, 255, 255);
+    ellipse(xPos+50, yPos-15, 10, 10);
+    
+		
+    if (busDirection == "toRight"){
+			if (xPos >= screen.width){  busDirection = "toLeft"; }
+			xPos++;
+		}
+		
+		if (busDirection == "toLeft"){
+			if (xPos <= 0){  busDirection = "toRight"; }
+			xPos--;
+		}
+			
+};
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

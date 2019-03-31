@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to find the number of frames on a page, and change the src property of every frame element to "w3schools.com".</p>
+
+<button onclick="myFunction()">Change the src property of every frame</button>
+<br><br>
+
+<iframe src="http://www.cnn.com"></iframe>
+<iframe src="http://www.bbc.com"></iframe>
+<iframe src="http://www.nytimes.com"></iframe>
+
+<script>
+function myFunction() {
+    for (var i = 0; i < frames.length; i++) {
+        frames[i].location = "http://www.w3schools.com"
+    }
+}
+</script>
+
+</body>
+</html>

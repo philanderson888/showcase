@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 600px;
+  height: 500px;
+  position: relative;
+  background: yellow;
+}
+#box01 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+#box02{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: blue;
+}
+</style>
+<body>
+<p><button onclick="myMove()">Click Me</button></p> 
+<div id ="container">
+  <div id ="box01"></div>
+  <div id = "box02"></div>
+</div>
+<div id="output"></div>
+<script>
+function myMove() {
+  var box01 = document.getElementById("box01")   
+  var box02 = document.getElementById('box02')
+  var output = document.getElementById("output")
+  // right hand edge is 50 pixels greater than left
+  var box01rightedge = 0+50;
+  var box01top = 0;
+  var box02leftedge = 500;
+  var box02height = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    output.innerHTML = "<div>Box 1 Right Edge - " + box01rightedge + " and box02leftedge is " +box02leftedge;
+    if (box02leftedge == 0) {
+      clearInterval(id);
+    } else 
+    if (box01rightedge >= box02leftedge) {
+      output.innerHTML += "<br />collision"
+      clearInterval(id);
+    }
+    else {
+      box02leftedge--
+      box02height++
+      box01top++;
+      box02.style.left = box02leftedge + "px"; 
+      box02.style.top = box02height + "px";
+      box01.style.top = box01top + "px"
+    }
+  }
+}
+</script>
+</body>
+</html>

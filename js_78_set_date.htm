@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Set Month And Year In Date</title>
+    <script>
+      function fnSetMonthYear(d, m, y) {
+        var e = new Date(d)
+        e.setFullYear(y);
+        e.setMonth(m);
+        document.getElementById('para1').innerHTML = "The new date is set as " + e;
+      }
+    </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Set Month And Year In Date</h2>
+  <form>
+    <p>
+      Please input a date
+    </p>
+    <input type="date" name="myDate" />
+    <input type="number" name="month" value="5" />
+    <input type="number" name="year" value="2008" />
+    <button type="button" onclick="fnSetMonthYear(myDate.value,parseInt(month.value),parseInt(year.value))">Click here to set the month and year on your chosen date</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

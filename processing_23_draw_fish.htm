@@ -1,0 +1,70 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+}
+				
+
+background(89, 216, 255);   
+				
+
+draw = function(){
+				
+	drawFish(200,100,118,74,162,0,255);
+
+	drawFish(300,300,69,76,0,100,255);
+
+	drawFish(200,150,250,76,0,100,255);
+	
+
+		
+	
+
+};
+		
+mouseClicked = function(){
+
+			var length = random(50,200);
+			var width = random(30,200);
+			var colorRed = random(255);
+			var colorGreen = random(255);
+			var colorBlue = random(255);
+    	drawFish(mouseX,mouseY,length,width,colorRed,colorGreen,colorBlue);
+
+}
+
+
+    
+drawFish = function(centerX,centerY,bodyLength,bodyHeight,bodyColorRed,bodyColorGreen,bodyColorBlue) {
+    var bodyColor = color(bodyColorRed,bodyColorGreen,bodyColorBlue);
+    noStroke();
+    fill(bodyColor);
+    // body
+    ellipse(centerX, centerY, bodyLength, bodyHeight);
+    // tail
+    var tailWidth = bodyLength/4;
+    var tailHeight = bodyHeight/2;
+    triangle(centerX-bodyLength/2, centerY,
+             centerX-bodyLength/2-tailWidth, centerY-tailHeight,
+             centerX-bodyLength/2-tailWidth, centerY+tailHeight);
+    // eye
+    fill(33, 33, 33);
+    ellipse(centerX+bodyLength/4, centerY, bodyHeight/5, bodyHeight/5);
+};
+
+		
+		
+		
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

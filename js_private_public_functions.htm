@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>Private Or Public Functions</title>
+<script>
+
+
+function x(){
+  console.log("Running inside function x()");
+  var y=10;
+  function z(){
+  	console.log("Running inside function z() which is a private function");
+  	return 22;
+  }
+  return {
+  	publicy:y,         //publicy = PUBLIC NAME, y=PRIVATE NAME
+  	publicz:z
+  }
+}
+
+x();
+console.log(x().publicy);
+console.log(x().publicz());
+console.log(x());
+
+
+try{
+	console.log(y);
+  console.log("calling x()");
+  x();
+
+}
+catch(e){
+	console.group("Cannot find y as it is a private variable so not reachable from outside");
+	console.log(e);
+}
+console.groupEnd();
+console.log("");
+x();
+try{
+	z();
+}
+catch(e){
+	console.log("")
+	console.log("Cannot find private function z() from outside the function");
+}
+console.log("publicy has value " + x().publicy + " and note that you have to run the function to extract the value - it does not have meaning outside of actually running the function!");
+console.log("publicz has value " + x().publicz());
+</script>
+</head>
+<body>
+<h1>Declare Functions Which Are Private And Public</h1>
+<h2>See F12 Console For Output</h2>
+
+</body>
+</html>

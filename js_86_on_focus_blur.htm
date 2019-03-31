@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs</title>
+  <script>
+    function fnFocus() {
+      document.getElementById('idInput1').style.backgroundColor = "Yellow";
+    }
+    function fnBlur() {
+      document.getElementById('idInput1').style.backgroundColor = "White";
+    }
+  </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>On Focus and On Blur</h2>
+  <form>
+    <input type="text" name="a" id="idInput1" value="Text here" onfocus="fnFocus()" onblur="fnBlur()" />
+  </form>
+</body>
+</html>

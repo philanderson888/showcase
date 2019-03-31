@@ -1,0 +1,27 @@
+<!-- This takes the input values in a form and turns them into a string which is effectively
+	what happens whenever you POST a form for sumisison to an HTML SERVER -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JSON Stringify</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script>
+    function JSONStringify(){
+    	var parameters = $("form").serialize();
+      $('#display').text(parameters);
+    }
+    </script>
+  </head>
+  <body>
+    <h1>JSON Stringify</h1>
+    <form action="" method="GET">
+      <p>Enter FirstName   <span>
+          <input name="firstname" type="text" value="Bill"></span></p>
+      <p>Enter Surname    <span>
+          <input name="surname" type="text" value="Findlay"></span></p>
+      <button type="submit" onclick="JSONStringify(); return false;">Submit</button>
+    </form>
+    <p id="display">test</p>
+  </body>
+</html> 

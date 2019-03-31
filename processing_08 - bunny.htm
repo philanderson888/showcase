@@ -1,0 +1,44 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+
+
+void setup()
+{
+  size(400,400);
+  background(125);
+  fill(255);
+  noLoop();
+  PFont fontA = loadFont("courier");
+  textFont(fontA, 14);  
+}
+
+void draw(){  
+	var eyeSize = 44;
+	var toothHeight = 19;
+
+	ellipse(150, 70, 60, 120);  // left ear
+	ellipse(240, 70, 60, 120);  // right ear
+
+	ellipse(200, 170, 150, 150); // face
+
+	fill(0, 0, 0);
+	ellipse(170, 150, eyeSize, eyeSize); // left eye
+	ellipse(230, 150, eyeSize, eyeSize); // right eye
+
+	line(150, 200, 250, 200); // mouth
+
+	noFill();
+	rect(185, 200, 15, toothHeight);  // left tooth
+	rect(200, 200, 15, toothHeight);  // right tooth
+
+}
+
+
+</script>
+<canvas id="pjs"> </canvas>
+</body>
+</html>

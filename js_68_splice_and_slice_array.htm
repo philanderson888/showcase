@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Splice Into An Array</title>
+  <script>
+    var myArray = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+    function fnDisplayArray(){
+      document.getElementById('para1').innerHTML = "The elements of the array are :";
+      for (var i = 0; i < myArray.length; i++) {
+        document.getElementById('para1').innerHTML += "<p>Element " + i + " - " + myArray[i] + "</p>";
+      }
+    }
+    function fnSplice(index,value) {
+      myArray.splice(index, 0, value);
+      fnDisplayArray();
+    }
+    function fnSpliceRemove(index) {
+      myArray.splice(index, 1);
+      fnDisplayArray();
+    }
+    function fnSlice(index) {
+      var myArrayCopy = myArray.slice(index);
+      document.getElementById('para2').innerHTML = "The copy of the array which has been created using the SLICE() method is as below";
+      for (var i = 0; i < myArrayCopy.length; i++) {
+        document.getElementById('para2').innerHTML += "<p>Element " + i + " - " + myArrayCopy[i] + "</p>";
+      }
+    }
+  </script>
+</head>
+<body onload="fnDisplayArray()">
+  <h1>Javascript Labs</h1>
+  <h2>Splice Values Into The Middle Of An Array</h2>
+  <form>
+    <p>
+      At index &nbsp;&nbsp;
+      <input type="number" name="myIndex" value="4" />
+      &nbsp;&nbsp;insert the number&nbsp;&nbsp;
+      <input type="number" name="a" value="454" />
+      &nbsp;&nbsp;into the array
+    </p>
+    <p>
+      <button type="button" onclick="fnSplice(parseInt(myIndex.value),parseInt(a.value))">Click here to splice an item into the middle of the array at index given</button>
+    </p>
+    <p>
+      <button type="button" onclick="fnSpliceRemove(parseInt(myIndex.value))">Click here to remove an element from the array at position of the index given above.</button>
+    </p>
+    <p>
+      <button type="button" onclick="fnSlice(parseInt(myIndex.value))">Click here to use the SLICE method to make a copy of the array starting from the index given, right to the end of the array</button>
+    </p>
+  </form>
+  <p id="para1"></p>
+  <p id="para2"></p>
+</body>
+</html>

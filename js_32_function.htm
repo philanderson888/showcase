@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Function Returns Undefined Unless Return Defined</title>
+  </head>
+  <body>
+    <h1>Function Returns Undefined Unless Return Defined..</h1>
+    <h1>Check out F12</h1>
+    <script>
+      var x = function(){
+        console.group("No return so RETURNS UNDEFINED..");
+      }
+      console.log(x());
+      console.groupEnd();
+      console.log("");
+      var y = function(){
+        console.group("Yes it DOES HAVE A RETURN so RETURNS AS DEFINED RESULT..");
+        return "Hello World";
+      }
+      console.log(y());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Javascript Lab - Cookies</title> 
+  <style>
+    *{
+      font-family:Arial;
+    }
+  </style>
+  <script>
+    function fnSetCookie(cookieText) {
+      document.cookie = "testCookie=" + cookieText;
+      document.getElementById('para1').innerHTML = "Cookie is set to - " + document.cookie;
+    }
+    function fnGetCookie() {
+      var allCookies = document.cookie;
+      var indexOfTestCookie = allCookies.indexOf("testCookie=");
+      var myCookie = allCookies.substring(indexOfTestCookie + 11);
+      for (var i = 0; i <= myCookie.length; i++) {
+        if (myCookie.charAt(i) == ";") {
+          myCookie = myCookie.substring(0, i);
+        }
+      }
+      if (myCookie == "") {
+        myCookie = "NOT SET";
+      }
+      document.getElementById('para1').innerHTML = "Your cookie 'Test Cookie' is " + myCookie;
+    }
+    function fnDeleteCookie() {
+      document.cookie = "testCookie=;";
+      fnGetCookie();
+    }
+  </script>
+</head>
+<body>
+ <h1>Javascript Labs</h1>
+  <h2>Cookies</h2>
+  <h3>In this lab we will learn how to set and read cookies</h3>
+  <form>
+    Please enter your testCookie value
+    <input type="text" value="Test Cookie Value" name="cookieText" />
+    <button type="button" onclick="fnSetCookie(cookieText.value)">Click here to set cookie 'testCookie' to hold the value above</button>
+    <button type="button" onclick="fnGetCookie()">Click here to confirm if a cookie has been set</button>
+    <button type="button" onclick="fnDeleteCookie()">Click here to remove cookie</button>
+  </form>
+<p id="para1"></p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html><head>
+<script type="text/javascript">
+function validatePostal(postalCode) {
+var pattern = /[\d]{5,9}/;
+if (postalCode.match(pattern) != 0 || postalCode.match(pattern) != null) 
+{
+alert("Please enter only numbers in the postal field");
+return false;
+}
+else if 
+(postalCode.value.length < 1){
+alert("Please enter a post code");
+return false;
+}
+else
+{
+document.myForm.submit();
+}
+</script></head>
+<body>
+<form name="myForm" action="http://www.bbc.co.uk" onsubmit="return validatePostal(this.postalCode)" >
+Name: <input type="text" name="userName"/><br/>
+Postal Code: <input type="text" name="postalCode"/><br/>
+<input type="submit" value="Submit"/>
+</form></body></html>

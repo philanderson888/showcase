@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Slice First Three Characters Of Month</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="inputArea">
+        <h1>Enter The Month</h1>
+            <input id="inputMonth" list="inputMonths" value="January"/>
+            <datalist id="inputMonths" type="text">
+                <option value="January">
+                <option value="February">
+                <option value="March">
+                <option value="April">
+                <option value="May">
+                <option value="June">
+                <option value="July">
+                <option value="August">
+            </datalist>
+            <button onclick="fnParseMonth()">Click To Find The Abbreviated Month</button>
+    </div>
+    <div class="outputArea">
+        <p id="length">
+
+        </p>
+        <p id="abbreviation">
+
+        </p>
+    </div>
+<script>
+    function fnParseMonth() {
+        var strMonth = document.getElementById('inputMonth').value;
+        console.log("Hi from Phil");
+        console.log(strMonth);
+        var monthLength = strMonth.length;
+        var abbrMonth = strMonth.slice(0, 3);
+        document.getElementById('length').innerHTML = '<p>The length of the input string is ' + monthLength;
+        document.getElementById('abbreviation').innerHTML = '<p>The abbreviated month is ' + abbrMonth;
+    }
+
+</script>
+</body>
+</html>

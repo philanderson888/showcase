@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Random Number</title>
+  <script>
+    function fnRandom(x) {
+      var myRandom = Math.random();
+      document.getElementById('para1').innerHTML = "<p>The random number is " + myRandom + "</p>";
+      document.getElementById('para1').innerHTML += "<p>And a random number between 1 and your chosen number of " + x + " = " + Math.floor((myRandom * x) + 1) + "</p>";
+    }
+  </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Random Number</h2>
+  <form>
+    <input type="number" name="a" value="500" />
+    <button type="button" onclick="fnRandom(parseInt(a.value))">Click here to generate a random number</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

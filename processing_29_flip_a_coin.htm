@@ -1,0 +1,60 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+}
+				
+
+
+
+				
+draw = function(){				
+
+
+
+};
+		
+
+mouseClicked = function(){
+
+background(255,255,255);
+
+// generate a random number between 0 and 1
+var number = random(0, 1);
+
+var integer = round(number);
+
+// display the text
+fill(0, 0, 0);
+textSize(100);
+text(number, screen.width/3, 110);
+
+if (integer === 0) {
+    fill(132, 0, 255);
+		text(integer + "   Heads", screen.width/3+50, 350);
+
+		} 
+else {
+    fill(217, 255, 0);
+		text(integer + "   Tails", screen.width/3 + 50, 350);
+
+}
+
+ellipse(screen.width/2, screen.height/4, screen.width/10, screen.width/10);
+
+
+}		
+		
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

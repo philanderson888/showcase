@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Javascript Lab - Checkbox</title>
+  <style>
+    *{
+      font-size:50px;
+      font-family:Arial;
+    }
+  </style>
+  <script>
+    function fnCheckStatus(form) {
+      if (form.myCheckbox.checked) {
+        document.getElementById('para1').innerHTML = "Box is checked";
+      }
+      else {
+        document.getElementById('para1').innerHTML = "Box is NOT checked";
+      }
+    }
+  </script>
+</head>
+<body>
+<form name="myForm">
+  <input type="checkbox" name="myCheckbox" value="selected" onclick="fnCheckStatus(myForm)"/>
+  <input type="button" name="btnCheckMe" onclick="fnCheckStatus(myForm)" value="Click here to check status of checkbox" /> 
+</form>
+<p id="para1"></p>
+</body>
+</html>

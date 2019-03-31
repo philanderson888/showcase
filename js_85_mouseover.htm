@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs</title>
+  <style>
+    div{
+      height:100px;
+      width:100px;
+      background-color:green;
+    }
+    #div1:hover{
+      background-color:red;
+    }
+  </style>
+  <script>
+    function fnMouseOver() {
+      document.getElementById('div2').innerHTML = "Using Javascript";
+      document.getElementById('div2').style.backgroundColor = 'red';
+    }
+    function fnMouseOut() {
+      document.getElementById('div2').style.backgroundColor = 'green';
+    }
+  </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>OnMouseover() events</h2>
+  <h3>This div uses the css:hover event</h3>
+  <div id="div1">Using CSS
+  </div>
+  <h3>This div uses the javascript onmouseover() event</h3>
+  <div id="div2" onmouseover="fnMouseOver()" onmouseout="fnMouseOut()">
+  </div>
+</body>
+</html>

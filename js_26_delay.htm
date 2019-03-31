@@ -1,0 +1,85 @@
+<html>
+<head>
+  <title>Javascript Delay</title>
+
+  <script>
+
+
+    function fnFlash() {
+
+		
+
+
+		for (var i = 1; i <= 5; i++) {
+		  var tick = function (i) {
+		    return function () {
+		      console.log(i);
+		      switch (i) {
+		        case 1:
+		          fnR2C2();
+		          break;
+		        case 2:
+		          fnR3C3();
+		          break;
+		        default:
+		          break;
+		      }
+		    }
+		  }
+		  setTimeout(tick(i), 1000 * i);
+		}
+	}
+
+	function fnR2C2(){
+	  document.getElementById('yellow').style.backgroundColor = "yellow";
+	}
+
+	function fnR3C3() {
+	  document.getElementById('R3C3').style.backgroundColor = "green";
+	}
+
+  </script>
+
+
+</head>
+<body onload="fnFlash()">
+<table id="table" onclick="fnFlash()">
+	<tr>
+		<th>Header1</th>
+		<th>Header2</th>
+		<th>Header3</th>
+		<th>Header4</th>
+		
+	</tr>
+	
+	<tr>
+		<td>Data1</td>
+		<td>Data2</td>
+		<td>Data3</td>
+		<td>Data4</td>
+		
+	</tr>
+		
+  <tr>
+    <td>Data1</td>
+    <td id="yellow" onclick="fnFlash()">Data2</td>
+    <td>Data3</td>
+    <td>Data4</td>
+
+  </tr>
+
+	
+	
+  <tr>
+    <td>Data1</td>
+    <td>Data2</td>
+    <td id="R3C3">Data3</td>
+    <td>Data4</td>
+
+  </tr>
+
+	
+	
+</table>
+</body>
+</html>

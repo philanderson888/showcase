@@ -1,0 +1,40 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+}
+				
+
+		
+draw = function(){
+				
+      fill(0, 255, 68); // start color
+
+    if ((mousePressed) && (mouseX>=50) && (mouseX <= 300) && (mouseY >= 150) && (mouseY <= 250))  { 
+        fill(33, 112, 52); // click color
+    }
+    rect(50, 150, 250, 100);  // the button
+
+    // The button text
+    fill(0, 0, 0);
+    textSize(30);
+    text("PRESS ME!", 93, 193);
+	
+
+};
+		
+	
+		
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

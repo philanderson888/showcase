@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Difference Between Two Dates</title>
+    <style>
+        button{
+            display:block;
+            margin-top:50px;
+            background-color:beige;
+        }
+    </style>
+</head>
+<body>
+    <div class="inputArea">
+        <h1>Determine the difference between two days</h1>
+        <h2>Please enter date in this format "24 June, 2016 08:15:00"</h2>
+        <input id="strDate1" value="24 June, 2016 08:15:00">
+        <h2>Please enter other date in same format</h2>
+        <input id="strDate2" value="24 June, 2022 09:45:00">
+        <button id="btnDetermineDateDiff" onclick="fnDetermineDateDiff()">Click here to determine date difference between the two dates(Check out Console.Log in F12)</button>
+    </div>
+    <div class="outputArea">
+
+    </div>
+<script>
+    function fnDetermineDateDiff() {
+        var stringDate1 = document.getElementById('strDate1').value;
+        var stringDate2 = document.getElementById('strDate2').value;
+        console.log(stringDate1);
+        console.log(stringDate2);
+        var date1 = new Date(stringDate1).getTime();
+        var date2 = new Date(stringDate2).getTime();
+        console.log(date1.toString());
+        console.log(date2.toString());
+        var dateDiff = date2 - date1;
+        console.log("UNIX timestamp difference = " + dateDiff.toString());
+        var exactDaysDiff = (dateDiff / (1000 * 60 * 60 * 24));
+        console.log("Exact Days Difference = " + exactDaysDiff.toString());
+        var daysDiff = Math.floor(exactDaysDiff);
+        console.log("Whole days difference = " + daysDiff.toString());
+        var decimalDiff = exactDaysDiff - daysDiff;
+        console.log("Decimal part of day difference = " + decimalDiff.toString());
+        console.log("This number is in full days so multiply by 24 to get full hours");
+        var hoursDiff = decimalDiff * 24;
+        console.log("Hours difference = " + hoursDiff.toString());
+        console.log("This number is in hours so floor to get whole hours");
+        var wholeHoursDiff = Math.floor(hoursDiff);
+        console.log("Whole hours difference = " + wholeHoursDiff.toString());
+        console.log("Now get the remainder in hours");
+        var partHoursDiff = hoursDiff - wholeHoursDiff;
+        console.log("Part hours difference = " + partHoursDiff.toString());
+        console.log("Mulitply by 60 to get minutes");
+        var MinutesDiff = partHoursDiff * 60;
+        console.log("Minutes Difference = " + MinutesDiff.toString());
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+div.one p {
+  margin: 20px;
+  background-color:#F00;
+}
+
+div.two > p {
+  margin: 20px;
+  background-color:#0F0;
+}

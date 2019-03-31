@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript lab - BODMAS</title>
+  <script>
+    function fnBodmas1(x, y, z) {
+      document.getElementById('para1').innerText = "( " + x + " + " + y + " ) * " + z + " = " + ((x + y) * z);
+      document.getElementById('para2').innerHTML = x + " + " + y + " * " + z + " = " + (x + y * z);
+    }
+  </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Bodmas</h2>
+  <form>
+    <input name="a" type="number" value="2" />
+    &nbsp;&nbsp;+&nbsp;&nbsp;
+    <input name="b" type="number" value="3" />
+    &nbsp;&nbsp;*&nbsp;&nbsp;
+    <input name="c" type="number" value="4" />
+    <button type="button" onclick="fnBodmas1(parseInt(a.value), parseInt(b.value), parseInt(c.value))">Click here to run (a + b) * c and a + b * c</button>
+  </form>
+  <p id="para1"></p>
+  <p id="para2"></p>
+
+</body>
+</html>

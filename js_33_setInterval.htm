@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Set Interval</title>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script>
+      $(document).ready(function(){
+       var i = 0;
+       setInterval(count,1000);
+       function count(){
+        i++;
+        var fontSize=100+20*i;
+        if(fontSize>600){fontSize=600}
+        var marginLeft=fontSize;
+        if(marginLeft>200){marginLeft=200}
+        $('#display').text(i).css("font-size",fontSize+"px").css("margin-left",marginLeft+"px");  
+       }
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Set Interval</h1>
+    <h2>setInterval(count,1000);<h2>
+    <h2> function count(){</h2>
+    <h2>   i++;</h2>
+    <h2>   $('#display').text(i);  </h2>
+    <h2> }</h2>
+    </h2>
+    <h1>
+      <div id="display"></div>
+    </h1>
+  </body>
+</html>

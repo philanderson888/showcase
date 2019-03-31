@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+function person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+    this.nationality = "English";
+}
+
+var myFather = new person("John", "Doe", 50, "blue");
+var myMother = new person("Sally", "Rally", 48, "green");
+console.log(myFather.weight);
+
+document.getElementById("demo").innerHTML =
+"My father " + myFather.firstName + " is " + myFather.nationality + ". My mother " + myMother.firstName + " is " + myMother.nationality + "<br /><br />Intially the 'weight' field is " + myFather.weight;
+
+person.prototype.weight=90;
+console.log(myFather.weight);
+
+
+
+document.getElementById("demo").innerHTML += "<br /><br />But after adding it in now both my parents weigh " + myFather.weight; 
+</script>
+
+</body>
+</html>

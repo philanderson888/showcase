@@ -1,0 +1,108 @@
+<html>
+<head>
+    <title>Javascript Timeout By Phil Anderson</title>
+</head>
+<body>
+    <div class="div1">
+        <input type="button" value="start/stop" onclick="_thread1.control ? _thread1.stop() : _thread1.start();" /><span>Counting summation of numbers till 10000000000</span> = <span id="1">0</span>
+    </div>
+    <div class="div2">
+        <input type="button" value="start/stop" onclick="_thread2.control ? _thread2.stop() : _thread2.start();" /><span>Counting numbers can be divided with 13 till 10000000000</span> = <span id="2">0</span>
+    </div>
+    <div class="div3">
+        <input type="button" value="start/stop" onclick="_thread3.control ? _thread3.stop() : _thread3.start();" /><span>Counting numbers can be divided with 3 till 10000000000</span> = <span id="3">0</span>
+    </div>
+<script>
+
+    var _thread1 = {//This is my thread as object
+        control: false,//this is my control that will be used for start stop
+        value: 0, //stores my result
+        current: 0, //stores current number
+        func: function () {   //this is my func that will run
+            if (this.control) {      // checking for control to run
+                if (this.current < 10000000000) {
+                    this.value += this.current;
+                    document.getElementById("1").innerHTML = this.value;
+                    this.current++;
+                }
+            }
+            setTimeout(function () {  // And here is the trick! setTimeout is a king that will help us simulate threading in javascript
+                _thread1.func();    //You cannot use this.func() just try to call with your object name
+            }, 0);
+        },
+        start: function () {
+            this.control = true;   //start function
+        },
+        stop: function () {
+            this.control = false;    //stop function
+        },
+        init: function () {
+            setTimeout(function () {
+                _thread1.func();    // the first call of our thread
+            }, 0)
+        }
+    };
+    var _thread2 = {
+        control: false,
+        value: 0,
+        current: 0,
+        func: function () {
+            if (this.control) {
+                if (this.current % 13 == 0) {
+                    this.value++;
+                }
+                this.current++;
+                document.getElementById("2").innerHTML = this.value;
+            }
+            setTimeout(function () {
+                _thread2.func();
+            }, 0);
+        },
+        start: function () {
+            this.control = true;
+        },
+        stop: function () {
+            this.control = false;
+        },
+        init: function () {
+            setTimeout(function () {
+                _thread2.func();
+            }, 0)
+        }
+    };
+    var _thread3 = {
+        control: false,
+        value: 0,
+        current: 0,
+        func: function () {
+            if (this.control) {
+                if (this.current % 3 == 0) {
+                    this.value++;
+                }
+                this.current++;
+                document.getElementById("3").innerHTML = this.value;
+            }
+            setTimeout(function () {
+                _thread3.func();
+            }, 0);
+        },
+        start: function () {
+            this.control = true;
+        },
+        stop: function () {
+            this.control = false;
+        },
+        init: function () {
+            setTimeout(function () {
+                _thread3.func();
+            }, 0)
+        }
+    };
+
+    _thread1.init();
+    _thread2.init();
+    _thread3.init();
+
+</script>
+</body>
+</html>

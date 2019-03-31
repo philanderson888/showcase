@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Multiply</title>
+    <script>
+        function functionMultiply(x, y) {
+            document.getElementById('multiplyMe').innerText = x + " * " + y + " = " + (x * y);
+        }
+    </script>
+</head>
+<body>
+    <h1>Javascript Labs</h1>
+    <h2>Multiply</h2>
+    <form>
+        <input type="number" name="a" value="55" />
+        &nbsp;&nbsp;*&nbsp;&nbsp;
+        <input type="number" name="b" value="2" />
+        <button type="button" onclick="functionMultiply(parseInt(a.value),parseInt(b.value))">Click to multiply the two numbers</button>
+    </form>
+    <p id="multiplyMe"></p>
+</body>
+</html>

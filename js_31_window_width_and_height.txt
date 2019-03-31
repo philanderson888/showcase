@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+function fnDisplaySize(){
+  var output = "";
+  output += "window.innerWidth + ' ' + window.innerHeight + ' ' + window.outerWidth + ' ' + window.outerHeight;";
+  output += "window.innerWidth = " + window.innerWidth;
+  output += "<br />";
+  output += "window.innerHeight = " + window.innerHeight;
+  output += "<br />";
+  output += "window.outerWidth = " + window.outerWidth;
+  output += "<br />";
+  output += "window.outerHeight  = " + window.outerHeight;
+  output += "<br />";
+  document.getElementById('x').innerHtml=output;
+}
+</script>
+</head>
+<body onload="fnDisplaySize">
+<button type="button" onclick="fnDisplaySize()">Click to display stats</button>
+<div id="x">
+</div>
+</body>
+</html>

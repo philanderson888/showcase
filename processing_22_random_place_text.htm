@@ -1,0 +1,40 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+}
+				
+
+draw = function(){
+				
+	callName();
+
+};
+				
+
+callName = function() {
+    
+    var textX = random(0, screen.width);
+    var textY = random(0, screen.height);
+    var yourName = "Philip";
+
+    fill(255, 0, 0);
+    textSize(30);
+    text("Hiiii, " + yourName, textX, textY);
+		
+		
+		
+
+};
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

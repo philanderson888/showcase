@@ -1,0 +1,68 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+
+ArrayList <Drawing> drawings = new ArrayList <Drawing>();
+
+void setup() {
+  size(400, 400);
+  background(255);
+  colorMode(HSB);
+}
+	
+
+
+void draw() {
+}
+
+
+
+void draw() {
+}
+
+void mouseDragged() {
+
+  drawings.add(new Drawing(mouseX, mouseY));
+
+  for (int i=0;i<drawings.size();i++) {
+    Drawing curr  = drawings.get(i);
+    if(i > 0){                                    //if the current index is greather than 0
+      Drawing prev = drawings.get(i-1);           //we can access the previous
+      if(dist(curr.x,curr.y,prev.x,prev.y) < 20) {//check the distance, if it's within a certain threshold
+        line(curr.x,curr.y,prev.x,prev.y);        //draw the line
+      }
+    }
+    curr.display();
+  }
+}
+
+
+class Drawing {
+  float x, y, r;
+  color c;
+
+  Drawing(float ax, float ay) {
+    x=ax;
+    y=ay;
+    r=random(2, 20);
+    c=color(random(100, 200), 255, 255);
+  }  
+
+  void display() {
+    fill(c, 100);
+    ellipse(x,y,r,r);
+  }
+}
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>
+

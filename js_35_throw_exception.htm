@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title></title>
+<script>
+function throw1(){
+	try{
+		throw {
+	    name:        "System Error", 
+	    level:       "Show Stopper", 
+	    message:     "Error detected. Please contact the system administrator.", 
+	    htmlMessage: "Error detected. Please contact the <a href=\"mailto:sysadmin@acme-widgets.com\">system administrator</a>.",
+	    toString:    function(){return this.name + ": " + this.message;} 
+		}
+	}
+	catch(e){
+		var displayThis = '<h1>Throwing An Exception</h1>';
+		displayThis += '<h2>' + e.name + '<br />' + e.level + '<br />' + e.message + '<br />' + e.htmlMessage + '<br />' + e.toString() + '</h2>';
+		document.getElementById('display').innerHTML = displayThis;
+	}
+}
+</script>
+</head>
+<body>
+<form>
+<button type="button" id="button1" onclick='throw1()'>Submit</button>
+</form>
+<div id='display'></div>
+</body>
+</html>

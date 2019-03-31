@@ -1,0 +1,63 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+
+   /* @pjs preload="images/Hopper-Cool.png"; */
+	 /* @pjs preload="images/Star.png"; */
+	
+}
+
+
+var Rainbow = function(x,y, radius){
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+};
+
+var rainbow01 = new Rainbow (100,100,50);
+var rainbow02 = new Rainbow (300,200,300);
+var rainbow03 = new Rainbow (400,200,300);
+var rainbow04 = new Rainbow (500,200,300);
+var rainbow05 = new Rainbow (600,200,300);
+
+var drawRainbow = function(rainbow) {
+    noFill();
+    strokeWeight(5);
+    stroke(255, 0, 0);
+    arc(rainbow.x, rainbow.y, rainbow.radius, rainbow.radius, PI , 2 * PI);
+    stroke(250, 200, 0);
+    arc(rainbow.x, rainbow.y, rainbow.radius-10, rainbow.radius-10, PI , 2 * PI);
+    stroke(240, 255, 102);
+    arc(rainbow.x, rainbow.y, rainbow.radius-20, rainbow.radius-20, PI , 2 * PI);
+    stroke(29, 255, 13);
+    arc(rainbow.x, rainbow.y, rainbow.radius-30, rainbow.radius-30, PI , 2 * PI);
+    stroke(122, 155, 255);
+    arc(rainbow.x, rainbow.y, rainbow.radius-40, rainbow.radius-40, PI , 2 * PI);
+};
+
+				
+draw = function(){				
+	drawRainbow(rainbow01);		
+	drawRainbow(rainbow02);
+	drawRainbow(rainbow03);
+	drawRainbow(rainbow04);
+	drawRainbow(rainbow05);
+	noLoop();
+};
+		
+
+
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

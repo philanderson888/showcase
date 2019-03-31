@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Lab - Concatenation</title>
+    <script>
+      function fnJoinMe(x,y) {
+        var z = x + " " + y
+        document.getElementById('joinMe').innerHTML = z;
+      }
+    </script>
+    
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>String Joining = Concatenation</h2>
+  <form>
+    <input type="text" name="a$" value="George" />
+    <input type="text" name="b$" value="Clooney" />
+    <button type="button" onclick="fnJoinMe(a$.value,b$.value)">Click here to join the two strings together (concatenate them)</button>
+  </form>
+  <p id="joinMe"></p>
+</body>
+</html>

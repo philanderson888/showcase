@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Javascript Lab - Radio Buttons</title> 
+  <style>
+    *{
+      font-size:50px;
+      font-family:Arial;
+    } 
+  </style> 
+  <script>
+
+
+
+
+  function isSelected(form) {
+    var len = form.mySelect.length;
+    var output = "";
+    for(var i = 0; i < len; i++) {
+      if (form.mySelect.options[i].selected) {
+        output += "<p>Value: " + form.mySelect.options[i].value + "</p>";
+      }
+    }
+    if (output == "") {
+      output = "No items were selected";
+    }
+    document.getElementById('para1').innerHTML = output;
+  }
+
+
+</script>
+</head>
+<body>
+
+
+  <form name="myForm" id="myForm">
+    <select multiple name="mySelect">
+      <option selected value="no value selected"></option>
+      <option value="1">First option</option>
+      <option value="2">Second option</option>
+      <option value="3">Third option</option>
+    </select>
+    <p>
+      <input type="button" value="Check Selection" onclick="isSelected(this.form);" />
+    </p>
+  </form>
+
+
+  <p id="para1"></p>
+</body>
+</html>

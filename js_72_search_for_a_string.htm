@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Search For A String In A String</title>
+  <script>
+    function fnSearch(inputString,searchString) {
+      console.log("searchString = " + searchString);
+      console.log("searchString length = " + searchString.length); 
+      console.log("inputString = " + inputString);
+      for (var i = 0; i < inputString.length; i++){
+         console.log("i = " + i);
+         console.log("i + searchString.length = " + (i + searchString.length));
+         if (inputString.slice(i, i + searchString.length) === searchString) {
+           document.getElementById('para1').innerHTML = "Search string '" + searchString + "' found at position " + i + " using the SLICE() method";
+           break;
+         }
+      }
+    }
+    function fnSearchWithIndexOf(inputString, searchString) {
+      var firstMatch = inputString.indexOf(searchString);
+      document.getElementById('para1').innerHTML = "Match not found";
+      if (firstMatch != -1) {
+        document.getElementById('para1').innerHTML = "Match of string '" + searchString + "' found at position " + firstMatch + " using the indexOf() method!!!";
+      }
+    }
+    function fnSearchLastIndexOf(inputString, searchString) {
+      var lastMatch = inputString.lastIndexOf(searchString);
+      if (lastMatch != -1){
+        document.getElementById('para1').innerHTML = "Match of string '" + searchString + "' found at position " + lastMatch + " using the lastIndexOf() method";  
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Search for a string inside another string</h2>
+  <form>
+    <p>
+      Please enter the string you wish to search
+    </p>
+    <input name="inputString" type="text" value="This is the input string that I have given" style="width:400px"/>
+    <p>
+      Please enter the search string
+    </p>
+    <input name="searchString" type="text" value="input" />
+    <p></p>
+    <button type="button" onclick="fnSearch(inputString.value,searchString.value)">Please click here to search for a string within a string using the SLICE() method</button>
+    <p></p>
+    <button type="button" onclick="fnSearchWithIndexOf(inputString.value,searchString.value)">Please click here to search for a string using the indexOf() method</button>
+    <p></p>
+    <button type="button" onclick="fnSearchLastIndexOf(inputString.value,searchString.value)">Please click here to find the index of the last occurrence of the search string using the lastIndexOf() method</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

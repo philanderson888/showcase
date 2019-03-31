@@ -1,0 +1,59 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+
+   /* @pjs preload="images/Hopper-Cool.png"; */
+	
+}
+	
+
+
+		
+
+    var xPositions = [100, 200];
+
+
+				
+draw = function(){				
+
+   mouseClicked();
+
+};
+		
+
+mouseClicked = function(){
+		
+    if (mouseClicked) {
+        xPositions.push(mouseX);
+    }
+    noStroke();
+    background(212, 254, 255);
+    
+    stroke(64, 117, 207);
+    fill(196, 33, 255);
+    for (var i = 0; i < xPositions.length; i++) { 
+        line(xPositions[i], 120, 194, 285);
+        ellipse(xPositions[i], 104, 32, 46);
+    }
+    var hopper = loadImage("images/Hopper-Cool.png");
+    image(hopper, 189, 227);
+
+	noLoop();
+
+		
+}		
+		
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

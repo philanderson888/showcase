@@ -1,0 +1,47 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+}
+				
+
+// position of the ball
+var x = 0;
+var y = x;
+// how far the ball moves every time
+var speedX = 60*PI/180;
+var radius = 1;
+background(202, 255, 97);
+fill(66, 66, 66);
+draw = function(){
+		x = x + speedX;
+		
+		fill(112, 214, 139);
+		y = ((sin(x/30))*300) + 330;
+		ellipse(x, y, radius*2, radius*2); 
+		
+		fill(220, 21, 230);
+    y = ((cos(x/30))*300) + 330;
+		ellipse(x, y, radius*2, radius*2); 
+		
+		fill(88, 88, 88);
+		y = ((tan(x/30))*300) + 330;
+		ellipse(x, y, radius*2, radius*2); 
+
+};
+		
+	
+		
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

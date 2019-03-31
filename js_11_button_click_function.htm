@@ -1,0 +1,20 @@
+<html>
+<head>
+</head>
+<body>
+
+<script>
+function displayMessage(){
+var firstname = prompt("Please enter your first name");
+var surname = prompt("Please enter your surname");
+document.getElementById("demo").innerHTML = "The name entered is " + firstname + " " + surname;
+document.getElementById("demo2").innerHTML = Date();
+}
+
+</script>
+
+<input  type="button" value="Click Me" onClick="displayMessage()" />
+<p id="demo"></p>
+<p id="demo2"></p>
+</body>
+</html>

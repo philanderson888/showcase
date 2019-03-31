@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Functions</title>
+  <script>
+    function fnAdd(x, y, z) {
+      var sum = fnAddThreeNumbers(x, y, z)
+      document.getElementById('para1').innerHTML = "The sum of the three numbers " + x + ", " + y + " and " + z + " is " + sum;
+    }
+    function fnAddThreeNumbers(e, f, g) {
+      return (parseInt(e) + parseInt(f) + parseInt(g));
+    }
+  </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Declare A Function</h2>
+  <form>
+    <p>
+      Please input three values
+    </p>
+    <input type="number" name="a" value="12" />
+    <input type="number" name="b" value="34" />
+    <input type="number" name="c" value="16" />
+    <button type="button" onclick="fnAdd(parseInt(a.value),parseInt(b.value),parseInt(c.value))">Click here to add the three values using an internal function</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

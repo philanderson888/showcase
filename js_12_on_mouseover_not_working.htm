@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+
+<script>
+function displayMessage(){
+var firstname = prompt("Please enter your first name");
+var surname = prompt("Please enter your surname");
+document.getElementById("demo").innerHTML = "The name entered is " + firstname + " " + surname;
+document.getElementById("demo2").innerHTML = Date();
+}
+function writeText(txt){
+document.getElementById(test).innerHTML = txt;
+}
+
+</script>
+
+<input  type="button" value="Click Me" onClick="displayMessage()" />
+<p id="demo"></p>
+<p id="demo2"></p>
+<div id="test" onmouseover="writeText('Fresh Text Here')" width="200" height="200" style="background-color:red;">
+<h1>Header 1</h1>
+</div>
+</body>
+</html>

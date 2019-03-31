@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Loops (for, while, do)</title>
+  <script>
+    function fnRunLoops() {
+      var output = "<h3>For loop 1 to 10</h3>";
+      console.log(output);
+      for (var i = 0; i <= 10; i++) {
+        output += "<p>counter = " + i + "</p>";
+      }
+      output += "<h3>While Loop</h3>"
+      var counter = 0;
+      while (counter <= 10) {
+        output += "<p>counter = " + counter + "</p>";
+        counter++;
+      }
+      output += "<h3>Do..While Loop</h3>"
+      counter = 0;
+      do {
+        output += "<p>counter = " + counter + "</p>";
+        counter++;
+      }
+      while (counter <= 10);
+      document.getElementById('para1').innerHTML = output;
+    }
+  </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Loops (1) For (2) While (3) Do..While</h2>
+  <form>
+    <button type="button" onclick="fnRunLoops()">Click here to run loops</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

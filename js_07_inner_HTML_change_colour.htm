@@ -1,0 +1,16 @@
+<html>
+<head>
+</head>
+<body>
+
+<script type="text/javascript">
+function changeText3(){
+	var oldHTML = document.getElementById('para').innerHTML;
+	var newHTML = "<span style='color:red'>" + oldHTML + "</span>";
+	document.getElementById('para').innerHTML = newHTML;
+}
+</script>
+<p id='para'>Welcome to the site <b id='boldStuff3'>dude</b> </p> 
+<input type='button' onclick='changeText3()' value='Change Text'/>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+<title>Using JSON</title>
+</head>
+<body>
+<h2>Creating JSON objects using JavaScript and an array of employees</h2>
+<p>
+Name: <span id="jname"></span><br />
+Age: <span id="jage"></span><br />
+Address: <span id="jstreet"></span><br />
+Phone: <span id="jphone"></span><br />
+</p>
+<input type="button" value="Next Employee" onclick="nextEmployee()">
+<script type="text/javascript">
+var count = 0;
+function nextEmployee()
+{
+var JSONObject = { "employees":[
+{ "name":"Max Johnson", "street":"West 16th Street", "age":33,
+"phone":"555 1234567"},
+{ "name": "Jane Smith", "street":" 123 Main Street", "age":45,
+"phone":"555 1212344"},
+{ "name": "Cy Young", "street":" Apt B, 44 East Street", "age":25,
+"phone":"555 7654321"} ]
+}
+document.getElementById("jname").innerHTML=JSONObject.employees[count].name;
+document.getElementById("jage").innerHTML=JSONObject.employees[count].age;
+document.getElementById("jstreet").innerHTML=JSONObject.employees[count].street;
+document.getElementById("jphone").innerHTML=JSONObject.employees[count].phone;
+if(count<2)
+count++;
+else
+count=0;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+}
+				
+
+		
+draw = function(){
+				
+
+    if (mousePressed){
+			var colorRed = random(255);
+			var colorGreen = random(255);
+			var colorBlue = random(255);
+			fill(colorRed,colorGreen,colorBlue);
+			ellipse(mouseX, mouseY, 20, 20);    
+    }
+    
+	
+
+};
+		
+	
+		
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

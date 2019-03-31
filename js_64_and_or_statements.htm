@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - And and Or Statements</title>
+    <script>
+      function fnAndOr(x, y) {
+        if ((x > 10) || (y > 10)) {
+          document.getElementById('para1').innerHTML = "One of the numbers is greater than 10";
+        }
+        if ((x > 10) && (y > 10)) {
+          document.getElementById('para1').innerHTML = "Both numbers are greater than 10";
+        }
+      }
+    </script>
+</head>
+<body>
+  <form>
+    <input name="a" type="number" value="15" />
+    <input name="b" type="number" value="22" />
+    <button type="button" onclick="fnAndOr(parseInt(a.value),parseInt(b.value))">Click here to find out if one or both numbers are greater than 10</button>
+  </form>  
+  <p id="para1"></p>
+</body>
+</html>

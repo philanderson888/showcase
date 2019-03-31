@@ -1,0 +1,20 @@
+<html>
+<head>
+</head>
+<body>
+<p id="showDate"></p>
+<p id="demo"></p>
+<script>
+var myDate = new Date();
+document.getElementById("showDate").innerHTML = myDate;
+var myTime = myDate.getHours();
+if (myTime < 10){
+document.getElementById("demo").outerHTML = "<p>Time is " + myTime + ".00 hours, so <b>Good morning!</b></p>";
+}
+else{
+document.getElementById("demo").outerHTML = "<p>Time is " + myTime + ".00 hours, so <b>Good day!</b></p>";
+}
+</script>
+
+</body>
+</html>

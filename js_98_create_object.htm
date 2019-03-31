@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Javascript Lab - Create An Object</title> 
+  <style>
+    *{
+      font-family:Arial;
+    }
+  </style>
+ <script>
+   var employeeList = [];
+   function employee (fullName, email){
+     this.fullName = fullName;
+     this.email = email;
+   }
+   function fnAddEmployee(fullName, email) {
+     employeeList[employeeList.length] = new employee(fullName, email);
+     displayEmployees();
+   }
+   function displayEmployees() {
+     var output = "";
+     for (var i = 0; i < employeeList.length; i++) {
+       output += "<p>Employee " + i + " : " + employeeList[i].fullName + " : " + employeeList[i].email + "</p>";
+     }
+     output += "There are " + employeeList.length + " employees";
+     document.getElementById('para1').innerHTML = output;
+   }
+ </script>
+</head>
+<body>
+ <h1>Javascript Labs</h1>
+  <h2>Creating Objects</h2>
+  <h3>In this tutorial we will create employee objects</h3>
+ <form>
+   <input type="text" name="fullName" value="Edward Jones" />
+   <input type="email" name="email" value="ted@ted.com"/>
+   <button type="button" onclick="fnAddEmployee(fullName.value,email.value)">Click here to add employees to your database</button>
+ </form>
+<p id="para1"></p>
+</body>
+</html>

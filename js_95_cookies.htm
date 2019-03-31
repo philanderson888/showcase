@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Javascript Lab - Cookies</title> 
+  <style>
+    *{
+      font-family: Arial;
+    }
+  </style>
+  <script>
+    function fnSetCookie(text) {
+      document.cookie = "testvalue=Philip Anderson";
+      document.getElementById('para1').innerHTML = "Cookie was set";
+    }
+    function fnGetCookie() {
+      document.getElementById('para1').innerHTML = document.cookie;
+      var allCookies = document.cookie.split(';');
+      for (var i = 0; i < allCookies.length; i++) {
+        var thisCookie = allCookies[i];
+        while (thisCookie.charAt(0) == ' ') thisCookie = thisCookie.substring(1);
+        if (thisCookie.indexOf(name) == 0) {
+          var returnCookie = thisCookie.substring(name.length, thisCookie.length);
+          document.getElementById('para1').innerHTML += "<p>Cookie is " + returnCookie + "</p>";
+          return returnCookie;
+        }
+      }
+    }
+  </script>
+
+</head>
+<body>
+ <h1>Javascript Labs</h1>
+  <h2>Cookies</h2>
+  <h3>In this lab we will learn how to set and read cookies</h3>
+  <form name="myForm">
+    <input type="text" name="input01" value="Type some text here" />
+    <button type="button" onclick="fnSetCookie(input01.value)">Click here to set a cookie</button>
+    <button type="button" onclick="fnGetCookie()">Click here to return existing cookie</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

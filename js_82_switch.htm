@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Switch Statement</title>
+  <script>
+    function fnSwitch(x){
+      switch (x) {
+        case 1:
+          document.getElementById('para1').innerHTML = "You chose the number 1";
+          break;
+        case 2:
+          document.getElementById('para1').innerHTML = "You chose the number 2";
+          break;
+        case 3:
+          document.getElementById('para1').innerHTML = "You chose the number 3";
+          break;
+        default:
+          document.getElementById('para1').innerHTML = "You chose an incorrect number";
+          break;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Switch Statement</h2>
+  <form>
+    <p>
+      Input a number between 1 and 3 please
+    </p>
+    <input type="number" min="1" max="3" value="2" name="a" />
+    <button type="button" onclick="fnSwitch(parseInt(a.value))">Click here to run a switch statement on your variable input</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+
+
+void setup()
+{
+  size(400,400);
+  background(125);
+  fill(255);
+  noLoop();
+  PFont fontA = loadFont("courier");
+  textFont(fontA, 14);  
+}
+
+void draw(){  
+  // Draw rectangle
+	rect(0,0,200,200);
+	rect(200,200,200,200);
+	ellipse(200,200,50,250);
+	
+	background(186, 145, 20); // wooden table
+ellipse(200, 200, 350, 350); // plate
+ellipse(200, 200, 300, 300); 
+
+//egg
+fill(245, 245, 240);
+ellipse(150,150,137,137);
+fill(234, 242, 9);
+ellipse(150,150,50,50);
+
+//chips
+fill(255, 234, 0);
+
+quad(109,280,101,250,277,199,290,212);
+quad(159,330,151,300,327,249,340,262);
+
+fill(0, 255, 132);
+rect(260,86,28,94);
+
+fill(219, 192, 213);
+stroke(0, 217, 255);
+triangle(99,225,348,233,250,295);
+
+}
+
+
+</script>
+<canvas id="pjs"> </canvas>
+</body>
+</html>

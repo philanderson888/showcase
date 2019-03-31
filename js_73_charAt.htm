@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Lab - CharAt(i)</title>
+    <script>
+      function fnCharAt(inputString) {
+        document.getElementById('para1').innerHTML = "These are the characters found at the given positions";
+        for (var i = 0; i < inputString.length; i++) {
+          document.getElementById('para1').innerHTML += "<br />At position " + i + " is character " + inputString.charAt(i);
+        }
+      }
+    </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Finding The Character At A Set Position Using CharAt(i)</h2>
+  <form>
+    <input type="text" name="inputString" value="This is the input text that has been given" style="width:400px"/>
+    <button type="button" onclick="fnCharAt(inputString.value)">Click here to search through the input string using CharAt() method</button>
+  </form>
+
+  <p id="para1"></p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+<body>
+<p><?php echo strtotime("now"), "\n";?></p>
+
+<?php 
+echo date("jS F, Y", strtotime("11.12.10")); 
+// outputs 10th December, 2011 
+
+echo date("jS F, Y", strtotime("11/12/10")); 
+// outputs 12th November, 2010 
+
+echo date("jS F, Y", strtotime("11-12-10")); 
+// outputs 11th December, 2010  
+?>
+</p>
+</body>
+</html>

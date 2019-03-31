@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Converting From Strings To Numbers</title>
+  <script>
+    function fnParse(x,y) {
+      document.getElementById('para1').innerHTML = "The first string " + x + " parses to an integer " + parseInt(x) + " using parseInt()";
+      document.getElementById('para1').innerHTML += "<p>Adding 1 gives " + (parseInt(x) + 1) + "</p>";
+      document.getElementById('para1').innerHTML += "<p>The first string " + x + " parses to a floating point number " + parseFloat(x) + " using parseFloat()</p>";
+      document.getElementById('para1').innerHTML += "<p>Adding 1.1 gives " + (parseFloat(x) + 1.1) + "</p>";
+      document.getElementById('para1').innerHTML += "<p>The first string " + x + " parses to a number " + Number(x) + " using Number() method";
+      document.getElementById('para1').innerHTML += "<p>Adding 1 gives " + (Number(x) + 1) + "</p>";
+      document.getElementById('para1').innerHTML += "<p>The number " + Number(y) + " rounds to 2 decimal places as " + Number(y).toFixed(2) + "</p>";
+      document.getElementById('para1').innerHTML += "<p>Adding 1.1 gives " + (Number(Number(y).toFixed(2)) + 1.1) + "</p>";
+    }
+  </script>
+</head>
+<body>
+  <h1>Javascript Labs</h1>
+  <h2>Converting between strings and numbers</h2>
+  <form>
+    <p>The box below is formatted as a string</p>
+    <input type="text" name="a" value="12.131415" />
+    <p>
+      The box below is formatted as a number
+    </p>
+    <input type="number" name="b" value="16.35749" />
+    <p></p>
+    <button type="button" onclick="fnParse(a.value,b.value)">Click here to parse the values above</button>
+  </form>
+  <p id="para1"></p>
+</body>
+</html>

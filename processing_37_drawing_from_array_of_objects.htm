@@ -1,0 +1,79 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+
+void setup() {
+  size(screen.width, screen.height);
+}
+				
+		
+var drawWinston = function(facePosition) {
+    var faceX = facePosition.x;
+    var faceY = facePosition.y;
+    
+    fill(255, 255, 0);
+    ellipse(faceX, faceY, 180, 180); // face
+    fill(46, 46, 41);
+    ellipse(faceX - 30, faceY - 50, 30, 30); // eyes
+    ellipse(faceX + 44, faceY - 55, 30, 30);
+    fill(252, 65, 65);
+    ellipse(faceX + 19, faceY + 32, 82, 81); // mouth
+};
+
+	
+var positions = [
+  {x: 99, y: 117},
+  {x: 294, y: 117},
+  {x: 101, y: 316},
+  {x: 294, y: 316},
+  {x: 200, y: 200}
+];
+
+		
+draw = function(){	
+	background(212, 254, 255);		
+	for (var i = 0; i < positions.length; i++) {
+		drawWinston(positions[i]);
+			fill(0, 13, 255);
+				textSize(38);
+				text("X = " + positions[i].x + "  Y = " + positions[i].y, 3*screen.width/4, 4 * screen.height / 5);
+			}		 
+	mouseClicked();
+	noLoop();
+};
+		
+	
+mouseClicked = function(){
+		
+		if (mouseClicked){
+			background(212, 254, 255);		
+			textSize(38);
+			append(positions, mouseX,mouseY);
+			positions[positions.length-1].x = mouseX;
+			positions[positions.length-1].y = mouseY;
+			text("X = " + positions[positions.length-1].x + "  Y = " + positions[positions.length-1].y + "Positions.length = " + positions.length, 400,400);
+			
+			for (var i = 0; i < positions.length; i++) {
+					drawWinston(positions[i]);
+					fill(0, 13, 255);
+					textSize(38);
+			text("X = " + mouseX + "  Y = " + mouseY + "Positions.length = " + positions.length, 500,500);
+			}		 
+			
+			drawWinston(positions[positions.length-1]);
+		}					
+}				
+
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>
+

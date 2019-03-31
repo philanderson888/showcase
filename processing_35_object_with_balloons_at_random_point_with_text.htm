@@ -1,0 +1,75 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+
+   /* @pjs preload="images/Hopper-Cool.png"; */
+	 /* @pjs preload="images/Star.png"; */
+	
+}
+	
+
+
+		
+
+var xPositions = [100, 200];
+
+var paintBrush = {
+    x: 200,
+    y: 300,
+};
+
+var hopper = loadImage("images/Hopper-Cool.png");
+var star = loadImage("images/Star.png");
+   
+
+
+
+			
+				
+draw = function(){				
+
+
+   mouseClicked();
+
+};
+		
+
+mouseClicked = function(){
+		
+    if (mouseClicked) {
+				xPositions.push(mouseX);	
+				paintBrush.x = mouseX;
+				paintBrush.y = mouseY;
+				noStroke();
+				background(212, 254, 255);
+				stroke(64, 117, 207);
+				fill(196, 33, 255);
+				for (var i = 0; i < xPositions.length; i++) { 
+						line(xPositions[i], 120, mouseX, mouseY);  // was 194,285
+						ellipse(xPositions[i], 104, 32, 46);
+				}
+				image(hopper, mouseX, mouseY);  // was 189,227
+				imageMode(CENTER);
+		    image(star, paintBrush.x,paintBrush.y + 100);
+				fill(0, 13, 255);
+				textSize(38);
+				text("X = " + mouseX + "  Y = " + mouseY, 3*screen.width/4, 4 * screen.height / 5);
+			
+    }
+	noLoop();
+}		
+		
+
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>

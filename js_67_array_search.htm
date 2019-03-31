@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Labs - Array Search</title>
+  <script>
+    var myArray = [22, 33, 44, 55, 66, 77, 88, 99];
+    function fnDisplayArray() {
+      document.getElementById('para2').innerHTML = "Listing members of the array";
+      for (var i = 0; i < myArray.length; i++) {
+        document.getElementById('para2').innerHTML += "<p> " + i + " : " + myArray[i];
+      }
+    }
+    function fnSearch(x) {
+      document.getElementById('para1').innerHTML = "Match not found.  The item is not in the array.";
+      for (var i = 0; i < myArray.length; i++) {
+        if (myArray[i] === x){
+          document.getElementById('para1').innerHTML = "Match found!  The element " + x + " is found at position " + i + " in the array";
+          break;
+        }
+      }
+    }
+  </script>
+</head>
+<body onload="fnDisplayArray()">
+  <h1>Javascript Labs</h1>
+  <h2>Search for an item within an array</h2>
+  <form>
+    <input type="number" name="a" value="55" />
+    <button type="button" onclick="fnSearch(parseInt(a.value))">Click here to search the array for a particular number</button>
+  </form>
+  <p id="para1"></p>
+  <p id="para2"></p>
+</body>
+</html>

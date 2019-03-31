@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Javascript Labs - Modulus (Remainder)</title>
+  <script>
+    function fnModulus(x, y) {
+      document.getElementById('modulus').innerText = x + " / " + y + " = " + parseInt(x/y) + " with Modulus % (remainder) " + (x % y);
+    }
+  </script>
+</head>
+<body>
+<h1>Javascript Labs</h1>
+<h2>Modulus</h2>
+<form>
+  <input type="number" name="a" value="19" />
+  &nbsp;&nbsp;/&nbsp;&nbsp;
+  <input type="number" name="b" value="4" />
+  <button type="button" onclick="fnModulus(parseInt(a.value),parseInt(b.value))">Click here to Divide two numbers using Modulus Division</button>
+</form>
+  <p id="modulus"></p>
+</body>
+</html>

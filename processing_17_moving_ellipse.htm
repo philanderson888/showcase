@@ -1,0 +1,36 @@
+<html>
+<head>
+</head>
+<body>
+<script src="processing.js"></script>
+<script type="application/processing" data-processing-target="pjs">
+void setup() {
+  size(screen.width, screen.height);
+}
+noStroke();
+var x = 200;
+var y = 350;
+var ballWidth = 300;
+var ballHeight = 200;
+draw = function() {
+    background(255, 206, 71);
+    fill(191, 0, 255);
+    ellipse(x, y, ballWidth, ballHeight);
+    x = x + 4;
+    y = y - 2;
+    ballWidth = ballWidth * 0.99;
+    ballHeight = ballHeight / 1.01;
+};
+
+
+
+
+								
+
+
+
+</script>
+
+<canvas id="pjs"> </canvas>
+</body>
+</html>
