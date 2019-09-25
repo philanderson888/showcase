@@ -46,12 +46,34 @@
             display: grid;
             width: 100%;
             background-color: #399;
-            height: 90vh;
-            grid-template: repeat(2, 1fr 2fr) / repeat(4, 3fr 2fr);
+            grid-template: repeat(4, 1fr 2fr) / repeat(1, 3fr 2fr);
             margin-top: 20vh;
             padding: 5vmin 0;
         }
 
+        div.webPageLayout01 {
+            display: grid;
+            width: 100%;
+            background-color: #488;
+            margin-top: 20vh;
+            padding: 1vmin;
+            grid-template-rows: 7vh 80vh 13vh;
+            grid-template-columns: 20% 60% 20%;
+        }
+
+        div.webPageLayout02 {
+            display: grid;
+            width: 100%;
+            background-color: #899;
+            margin-top: 20vh;
+            padding: 3vmin;
+            grid-template-rows: 7vh 80vh 13hv;
+            grid-template-columns: 20% 60% 20%;
+        }
+
+        .boxNavbar{
+            grid-column 
+        }
         div.box {
             background-color: #ddd;
             margin: 2vmin;
@@ -129,6 +151,30 @@
         <div class="box">Box</div>
         <div class="box">Box</div>
         <div class="box">Box</div>
+        <div class="box">Box</div>
+        <div class="box">Box</div>
+    </div>
+    <div class="webPageLayout01">
+        <div class="box">Navbar</div>
+        <div class="box">Navbar</div>
+        <div class="box">Navbar</div>
+        <div class="box">Left</div>
+        <div class="box">Main</div>
+        <div class="box">Right</div>
+        <div class="box">Footer</div>
+        <div class="box">Footer</div>
+        <div class="box">Footer</div>
+    </div>
+    <div class="webPageLayout02">
+        <div class="box boxNavbar">Navbar</div>
+        <div class="box boxNavbar">Navbar</div>
+        <div class="box boxNavbar">Navbar</div>
+        <div class="box boxLeft">Left</div>
+        <div class="box">Main</div>
+        <div class="box">Right</div>
+        <div class="box boxFooter">Footer</div>
+        <div class="box boxFooter">Footer</div>
+        <div class="box boxFooter">Footer</div>
     </div>
 </body>
 
