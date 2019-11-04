@@ -168,7 +168,7 @@ function randomizer(d) {
       .width(width)
       .height(height);
 
-  d3.json("d3_01_bullets.json", function(error, data) {
+  d3.json("d3-01-bullets.json", function(error, data) {
     if (error) throw error;
     var svg = d3.select("body").selectAll("svg")
         .data(data)
