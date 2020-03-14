@@ -10,7 +10,7 @@
 		#myChart {
 			width: 25vw;
 			height: 25vw;
-			border: 2px solid gold;
+			border: 2px solid rgba(247, 210, 4, 0.822);
 		}
 	</style>
 </head>
@@ -21,12 +21,12 @@
 	<script>
 		var ctx = document.getElementById('myChart').getContext('2d');
 		var myChart = new Chart(ctx, {
-			type: 'line',
+			type: 'bar',
 			data: {
 				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
 				datasets: [{
 					label: '# of Votes',
-					data: [12, 19, 3, 5, 2, 3],
+					data: [12, 30, 3, 5, 2, 6],
 					backgroundColor: [
 						'rgba(255, 99, 132, 0.2)',
 						'rgba(54, 162, 235, 0.2)',
