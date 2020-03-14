@@ -42,6 +42,7 @@
 <body>
 
     <nav>
+        <a href="https://hardcore-bassi-db20c7.netlify.com/#">Online Version Of Page</a>
         <a href="#">HTML Alphabetical Features</a>
         <a href="#sectionCSS">CSS Features</a>
         <a href="#sectionJavascript">Javascript Alphabetical Features</a>
@@ -122,9 +123,9 @@
                 if (!nativedatalist) {
                     $('input[list]').each(function () {
                         var availableTags = $('#' + $(this).attr("list")).find('option').map(
-                    function () {
-                            return this.value;
-                        }).get();
+                            function () {
+                                return this.value;
+                            }).get();
                         $(this).autocomplete({
                             source: availableTags
                         });
@@ -5988,7 +5989,7 @@ console.error() red with icon
             function fnSetTimeoutDelay() {
                 setTimeout(function () {
                     document.getElementById("setTimeoutDelay").style.backgroundColor =
-                    "blue"; //EASIER AND BETTER
+                        "blue"; //EASIER AND BETTER
                     //document.getElementById("delay").setAttribute("style", "background-color:blue");                    // set DELAY DIV TO CHANGE BACKGROUND
                 }, 2000);
             }
