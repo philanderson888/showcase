@@ -5807,12 +5807,37 @@ console.error() red with icon
 
 
     <fieldset>
-      <h1>Javascript Random Website Selector</h1>
-      <button type="button" onclick="getRandomWebsite()">Select A Random Website</button>
+      <h1>Javascript Random Bookmark Selector</h1>
+      <button type="button" onclick="loadBookmarks()">Load Bookmarks</button>
+      <button type="button" onclick="getRandomWebsite()">Select A Random Bookmark</button>
+      <div id="bookmarksPlaceholder"></div>
       <script>
-          function getRandomWebsite() {
-              window.open('https://www.bbc.co.uk',"open new page");
-          }
+        const bookmarksArray = [
+          'https://www.bbc.co.uk',
+          'https://www.intel.com',
+          'https://www.itv.com'
+        ]
+
+        loadBookmarks = () => {
+          const bookmarks = document.createElement('ul')
+          bookmarksArray.forEach(url => {
+            const bookmark = document.createElement('li')
+            const link = document.createElement('a')
+            const linkText = document.createTextNode(url)
+            link.appendChild(linkText)
+            link.title = url
+            link.href = url 
+            bookmark.appendChild(link)
+            bookmarks.appendChild(bookmark)
+          })
+          document.querySelector('#bookmarksPlaceholder').appendChild(bookmarks);
+        }
+        
+        function getRandomWebsite() {
+          const randomIndex = Math.floor(Math.random()*bookmarksArray.length)
+          const randomBookmark = bookmarksArray[randomIndex]
+          window.location.replace(randomBookmark);
+        }
       </script>
   </fieldset>
 
