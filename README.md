@@ -14,5 +14,13 @@ Happy studying!
 
 https://github.com/philanderson888/course-notes
 
+and
+
+https://github.com/philanderson888/javascript
+
+the site is live at
+
+https://html-css-javascript-demo.netlify.app
+
 Phil Anderson 
 December 2019
